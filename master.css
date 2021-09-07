@@ -19,9 +19,9 @@ header {
   text-align: left;
   font-family: georgia;
   color: white;
-  font-size: 100px;
+  font-size: 10rem;
   padding-left: 10vw;
-  padding-top: 25vh;
+  padding-top: 20vh;
 }
 
 .text{
@@ -29,7 +29,7 @@ header {
   padding-left: 10vw;
   color: white;
   font-family: georgia;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 header * {
