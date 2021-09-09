@@ -19,7 +19,7 @@ header {
   text-align: left;
   font-family: georgia;
   color: white;
-  font-size: 10rem;
+  font-size: 15rem;
   padding-left: 10vw;
   padding-top: 20vh;
 }
@@ -29,7 +29,7 @@ header {
   padding-left: 10vw;
   color: white;
   font-family: georgia;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 header * {
