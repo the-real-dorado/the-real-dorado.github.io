@@ -1,4 +1,13 @@
-header a{
-  font-family: georgia, serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+header {
+  font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
 }
