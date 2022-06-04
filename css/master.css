@@ -27,20 +27,19 @@ header h1{
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 60px;
+  padding: 80px;
+}
+
+.column img {
+  vertical-align: middle;
+  width: 100%;
+  padding: 20px;
 }
 
 /*4 columns*/
 .column {
   flex: 25%;
   max-width: 25%;
-  padding: 20px;
-}
-
-.column img {
-  margin-top: 40px;
-  vertical-align: middle;
-  width: 100%;
 }
 
 /*3 columns*/
