@@ -1,20 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap');
-
-header {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/css/PlayfairDisplay-Regular.ttf');
 }
 
-header h1 {
+header h1{
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   display: flex;
   justify-content: center;
-  flex-grow:
 }
 
-body .intro h2 {
-  font-family: 'Overpass', sans-serif;
-  font-size: 20rem;
+@media screen and (max-width: 600px) {
+.photo {
+  font-size: 10.5vw;
+  }
+}
+
+.format {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px;
+}
+
+/*4 columns*/
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 20px;
+}
+
+.column img {
+  margin-top: 40px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/*3 columns*/
+@media screen and (max-width: 1200px) {
+  .column {
+    flex: 33%;
+    max-width: 33%;
+  }
+}
+
+/*2 columns*/
+@media screen and (max-width: 900px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/*1 column*/
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
 }
