@@ -1,6 +1,10 @@
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/css/PlayfairDisplay-Regular.ttf');
+    src: url('/styles/PlayfairDisplay-Regular.ttf');
+}
+@font-face {
+    font-family: 'Overpass';
+    src: url('/styles/Overpass-Thin.ttf');
 }
 
 @media (prefers-color-scheme:light)
@@ -13,6 +17,10 @@ header h1{
   font-size: 4rem;
   display: flex;
   justify-content: center;
+}
+
+#flip {
+  font-family: 'Overpass', serif;
 }
 
 @media screen and (max-width: 600px) {
