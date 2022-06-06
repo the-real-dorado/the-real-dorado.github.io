@@ -18,6 +18,8 @@ header h1{
 @media screen and (max-width: 600px) {
 .photo {
   font-size: 10.5vw;
+  padding-top: 18px;
+  padding-bottom: 18px;
   }
 }
 
