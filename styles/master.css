@@ -1,3 +1,4 @@
+/* custom fonts */
 @font-face {
     font-family: 'Playfair Display';
     src: url('/styles/PlayfairDisplay-Regular.ttf');
@@ -7,30 +8,34 @@
     src: url('/styles/Overpass-Thin.ttf');
 }
 
+
+/* auto theme */
 @media (prefers-color-scheme:light)
   {body,#flip{color:#000!important;background-color:#fff!important}}
 @media (prefers-color-scheme:dark)
   {body,#flip{color:#fff!important;background-color:#000!important}}
 
+
+/* title */
 header h1{
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
+  text-align: center;
   display: flex;
   justify-content: center;
 }
 
-#flip {
-  font-family: 'Overpass', serif;
-}
-
+/* small title */
 @media screen and (max-width: 600px) {
-.photo {
+.small-title {
   font-size: 10.5vw;
   padding-top: 18px;
   padding-bottom: 18px;
   }
 }
 
+
+/* general format */
 .format {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
@@ -39,6 +44,34 @@ header h1{
   justify-content: center;
 }
 
+/* body */
+.card3D img, video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 70%;
+}
+@media screen and (max-width: 1200px) {
+  .card3D img, video {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .card3D img, video {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card3D img, body video {
+    max-width: 100%;
+  }
+}
+
+
+/* responsive gallery */
+
+/* photography */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +113,44 @@ header h1{
     max-width: 100%;
   }
   .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+}
+
+/* 3D */
+
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px;
+}
+
+.column2 img {
+  vertical-align: middle;
+  width: 100%;
+  padding: 5px;
+}
+
+.column2 #space{
+  padding: 20px;
+}
+
+/*2 columns*/
+.column2 {
+  flex: 50%;
+  max-width: 50%;
+}
+
+/*1 column*/
+@media screen and (max-width: 600px) {
+  .column2 {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .row2 {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
