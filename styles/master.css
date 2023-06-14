@@ -85,18 +85,18 @@ header h1{
 }
 
 /*4 columns*/
-.column {
+/* .column {
   flex: 25%;
   max-width: 25%;
-}
+} */
 
 /*3 columns*/
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) { */
   .column {
     flex: 33%;
     max-width: 33%;
   }
-}
+/* } */
 
 /*2 columns*/
 @media screen and (max-width: 900px) {
