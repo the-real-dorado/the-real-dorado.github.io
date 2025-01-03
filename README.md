@@ -1,1 +1,1 @@
-https://rotf.lol/dorado
+just click it
