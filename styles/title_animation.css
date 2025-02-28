@@ -1,0 +1,108 @@
+/* block */
+:root {
+    --initial-font: 'Overpass', sans-serif;
+    --final-font: 'Limelight';
+    /* --final-font: 'Plaster'; */
+    --text-case-initial: lowercase;
+    --text-case-final: uppercase;
+    --offset-initial: 2rem;
+    --offset-final: 2rem;
+    --initial-font-size: 4rem;
+    --final-font-size: 4rem;
+}
+
+/* handwritten */
+:root {
+    --initial-font: 'Overpass', sans-serif;
+    /* --final-font: 'Alex Brush'; */
+    /* --final-font: 'Sail'; */
+    /* --final-font: 'Outward'; */
+    --final-font: 'Relieve'; /* update preload in HTML */
+    --text-case-initial: uppercase;
+    --text-case-final: capitalize;
+    --offset-initial: 2rem;
+    --offset-final: 2rem; /* 0rem for mobile */
+    --initial-font-size: 4rem;
+    --final-font-size: 8rem;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 6px 0 red, -6px 0 blue;
+        transform: translateX(1px);
+        font-family: var(--initial-font);
+        text-transform: var(--text-case-initial);
+        top: var(--offset-initial);
+        font-size: var(--initial-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(1px);
+    }
+
+    50% {
+        text-shadow: 6px 0 blue, -6px 0 red;
+        transform: translateX(1px);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(1px);
+    }
+
+    65% {
+        text-shadow: -6px 0 red, 6px 0 blue;
+        transform: translateX(-1px);
+        font-family: var(--initial-font);
+        text-transform: var(--text-case-initial);
+        top: var(--offset-initial);
+        font-size: var(--initial-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(-1px);
+    }
+
+    75% {
+        text-shadow: -6px 0 blue, 6px 0 red;
+        transform: translateX(-1px);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    100% {
+        text-shadow: none;
+        transform: translateX(0px);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.glitch {
+    font-family: var(--initial-font);
+    text-transform: var(--text-case-initial);
+    font-size: var(--initial-font-size);
+    line-height: 6rem;
+    position: absolute;
+    animation: glitch 0.5s steps(3, end) 1 forwards;
+    animation-delay: 3s;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --offset-final: 0rem;
+    }
+}

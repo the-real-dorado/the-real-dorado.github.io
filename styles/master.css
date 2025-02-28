@@ -1,11 +1,51 @@
 /* custom fonts */
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/styles/PlayfairDisplay-Regular.ttf');
+    src: url('/styles/fonts/PlayfairDisplay-Regular.ttf');
 }
 @font-face {
     font-family: 'Overpass';
-    src: url('/styles/Overpass-Thin.ttf');
+    src: url('/styles/fonts/Overpass-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Alex Brush'; /* Dorado */
+  src: url('/styles/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Cylburn'; /* Edwin George */
+  src: url('/styles/fonts/Cylburn.ttf');
+}
+
+@font-face {
+  font-family: 'Limelight'; /* DORADO */
+  src: url('/styles/fonts/Limelight-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Outward'; /* Edwin George */
+  src: url('/styles/fonts/outward-round.ttf');
+}
+
+@font-face {
+  font-family: 'Plaster'; /* DORADO */
+  src: url('/styles/fonts/Plaster-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Relieve'; /* Dorado */
+  src: url('/styles/fonts/Relieve.ttf');
+}
+
+@font-face {
+  font-family: 'Sail'; /* Dorado */
+  src: url('/styles/fonts/Sail-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono'; /* Dorado */
+  src: url('/styles/fonts/RobotoMono-Regular.ttf');
 }
 
 
@@ -37,7 +77,7 @@ header h1{
 
 /* general format */
 .format {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Overpass', serif;
   font-size: 1.5rem;
   text-align: center;
   display: flex;

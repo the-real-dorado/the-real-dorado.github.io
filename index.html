@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  
   <head>
     <title>dorado</title>
     <meta charset="utf-8">
@@ -9,23 +10,26 @@
     <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="/styles/w3.css">
     <link rel="stylesheet" href="/styles/master.css">
+    <link rel="stylesheet" href="/styles/title_animation.css">
+    <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   </head>
-  <header>
-    <div class="w3-container w3-padding-16"></div>
-    <h1 class="w3-container">
-      DORADO</h1>
-    <div class="w3-container w3-padding-16"></div>
+  
+  <header style="overflow: hidden;">
+    <h1 class="w3-container glitch">
+      Dorado
+    </h1>
   </header>
+  
   <body>
+    <div class="w3-container w3-padding-64"></div>
+    <div class="w3-container w3-padding-16 mobile"></div>
+    <style>@media (min-width: 601px) {.mobile {display: none !important;}}</style>
     <div>
       <p class="format w3-container animate__animated animate__fadeInUp">
         Hi</p>
       <p class="format w3-container animate__animated animate__fadeInUp animate__delay-1s">
         This is just a bunch of stuff that I've made and done</p>
     </div>
-
-    <div class="w3-container w3-padding-16"></div>
-
     <div class="format w3-container w3-padding-16">
       <a href="/pages/photography.html" style="font-family:'Overpass',serif;" id="flip"
       class="w3-button w3-border w3-border-grey w3-round-large animate__animated animate__fadeInUp animate__delay-2s">
@@ -41,6 +45,6 @@
         class="w3-button w3-border w3-border-grey w3-round-large animate__animated animate__fadeInUp animate__delay-2s">
         Blog</a>
     </div>
-    <div class="w3-container w3-padding-16"></div>
   </body>
+
 </html>
