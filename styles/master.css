@@ -12,49 +12,40 @@
   font-family: 'Alex Brush'; /* Dorado */
   src: url('/styles/fonts/AlexBrush-Regular.ttf');
 }
-
 @font-face {
   font-family: 'Cylburn'; /* Edwin George */
   src: url('/styles/fonts/Cylburn.ttf');
 }
-
 @font-face {
   font-family: 'Limelight'; /* DORADO */
   src: url('/styles/fonts/Limelight-Regular.ttf');
 }
-
 @font-face {
   font-family: 'Outward'; /* Edwin George */
   src: url('/styles/fonts/outward-round.ttf');
 }
-
 @font-face {
   font-family: 'Plaster'; /* DORADO */
   src: url('/styles/fonts/Plaster-Regular.ttf');
 }
-
 @font-face {
   font-family: 'Relieve'; /* Dorado */
   src: url('/styles/fonts/Relieve.ttf');
 }
-
 @font-face {
   font-family: 'Sail'; /* Dorado */
   src: url('/styles/fonts/Sail-Regular.otf');
 }
-
 @font-face {
   font-family: 'Roboto Mono'; /* Dorado */
   src: url('/styles/fonts/RobotoMono-Regular.ttf');
 }
 
-
 /* auto theme */
 @media (prefers-color-scheme:light)
-  {body,#flip{color:#000!important;background-color:#fff!important}}
+  {body{color:#000!important;background-color:#fff!important}}
 @media (prefers-color-scheme:dark)
-  {body,#flip{color:#fff!important;background-color:#000!important}}
-
+  {body{color:#fff!important;background-color:#000!important}}
 
 /* title */
 header h1{
