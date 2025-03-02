@@ -1,0 +1,23 @@
+.underline {
+    margin: 0;
+    padding: 0;
+    position: inherit;
+    cursor: pointer;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 0.8rem;
+    height: 1.2px;
+    background-color: var(--themeColor);
+    transition: width 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .underline::after {
+    bottom: 0.8rem;
+    }
+}

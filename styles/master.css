@@ -42,10 +42,28 @@
 }
 
 /* auto theme */
-@media (prefers-color-scheme:light)
-  {body{color:#000!important;background-color:#fff!important}}
-@media (prefers-color-scheme:dark)
-  {body{color:#fff!important;background-color:#000!important}}
+:root {
+  --theme-light: #fff;
+  --theme-dark: #000;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--theme-light) !important;
+    color: var(--theme-dark) !important;
+    --themeColor: var(--theme-light);
+    --notThemeColor: var(--theme-dark);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--theme-dark) !important;
+    color: var(--theme-light) !important;
+    --themeColor: var(--theme-dark);
+    --notThemeColor: var(--theme-light);
+  }
+}
+
 
 /* title */
 header h1{
@@ -64,6 +82,7 @@ header h1{
   padding-bottom: 18px;
   }
 }
+
 
 
 /* general format */
