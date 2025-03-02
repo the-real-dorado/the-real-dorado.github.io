@@ -11,10 +11,14 @@ window.addEventListener('scroll', function () {
     function setRotationFactors() {
         if (window.matchMedia("(max-width: 600px)").matches) {
             // Mobile values
-            return { rotationFactor1: 1.0, rotationFactor2: 1.2, rotationFactor3: 1.4 };
+            return { rotationFactor1: 1.0,
+                     rotationFactor2: 1.2,
+                     rotationFactor3: 1.4 };
         } else {
             // Desktop values
-            return { rotationFactor1: 0.6, rotationFactor2: 0.7, rotationFactor3: 0.8 };
+            return { rotationFactor1: 0.6,
+                     rotationFactor2: 0.7,
+                     rotationFactor3: 0.8 };
         }
     }
 

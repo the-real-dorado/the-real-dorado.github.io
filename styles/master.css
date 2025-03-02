@@ -88,11 +88,18 @@ header h1{
 /* general format */
 .format {
   font-family: 'Overpass', serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 600px) {
+  .format{
+    font-size: 1.5rem;
+  }
+}
+
 
 /* body */
 .card3D img, video {

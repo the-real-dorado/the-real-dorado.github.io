@@ -1,14 +1,3 @@
-:root {
-    --initial-font: 'Overpass', sans-serif;
-    --final-font: 'Limelight';
-    --text-case-initial: lowercase;
-    --text-case-final: uppercase;
-    --offset-initial: 2rem;
-    --offset-final: 2rem;
-    --initial-font-size: 4rem;
-    --final-font-size: 4rem;
-}
-
 /* handwritten */
 :root {
     --initial-font: 'Overpass', sans-serif;
@@ -16,148 +5,27 @@
     /* update preload in HTML */
     --text-case-initial: uppercase;
     --text-case-final: capitalize;
-    --offset-initial: 2rem;
-    --offset-final: 2rem;
+    --offset-initial: 10vh;
+    --offset-final: 10vh;
     /* 0rem for mobile */
-    --initial-font-size: 4rem;
-    --final-font-size: 8rem;
+    --initial-font-size: 10vh;
+    --final-font-size: 20vh;
+    --glitch-int-shadow: 5vw;
+    --glitch-int-transform: 1vw;
+    --glitch-inf-shadow: 0.5vw;
+    --glitch-inf-transform: 1vw;
+    --line-height: 10vh;
 }
 
-/* Original glitch animation */
-@keyframes glitch-intro {
-    0% {
-        text-shadow: 6px 0 red, -6px 0 blue;
-        transform: translateX(1px);
-        font-family: var(--initial-font);
-        text-transform: var(--text-case-initial);
-        top: var(--offset-initial);
-        font-size: var(--initial-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(1px);
-    }
-
-    50% {
-        text-shadow: 6px 0 blue, -6px 0 red;
-        transform: translateX(1px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(1px);
-    }
-
-    65% {
-        text-shadow: -6px 0 red, 6px 0 blue;
-        transform: translateX(-1px);
-        font-family: var(--initial-font);
-        text-transform: var(--text-case-initial);
-        top: var(--offset-initial);
-        font-size: var(--initial-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(-1px);
-    }
-
-    75% {
-        text-shadow: -6px 0 blue, 6px 0 red;
-        transform: translateX(-1px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    100% {
-        text-shadow: none;
-        transform: translateX(0px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* Indefinite lower intensity glitch animation */
-@keyframes glitch-inf {
-    0% {
-        text-shadow: 3px 0 red, -3px 0 blue;
-        transform: translateX(0px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    50% {
-        text-shadow: -3px 0 red, 3px 0 blue;
-        transform: translateX(-1px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    65% {
-        text-shadow: 3px 0 blue, -3px 0 red;
-        transform: translateX(1px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    75% {
-        text-shadow: -3px 0 blue, 3px 0 red;
-        transform: translateX(0px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    100% {
-        text-shadow: none;
-        transform: translateX(0px);
-        font-family: var(--final-font);
-        text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-.glitch {
+.glitch-int {
     font-family: var(--initial-font);
     text-transform: var(--text-case-initial);
     font-size: var(--initial-font-size);
-    line-height: 6rem;
+    line-height: var(--line-height);
     position: absolute;
-    animation: glitch-intro 0.5s steps(3, end) 1 forwards;
+    animation: glitch-int 0.5s steps(3, end) 1 forwards;
     left: 50%;
-    top: 2rem;
+    top: var(--offset-final);
     transform: translateX(-50%);
     animation-delay: 3s;
 }
@@ -166,16 +34,155 @@
     font-family: var(--final-font);
     text-transform: var(--text-case-final);
     font-size: var(--final-font-size);
-    line-height: 6rem;
+    line-height: var(--line-height);
     position: absolute;
     animation: glitch-inf 2s steps(5, end) infinite;
     left: 50%;
-    top: 2rem;
+    top: var(--offset-final);
     transform: translateX(-50%);
 }
 
 @media screen and (max-width: 600px) {
     :root {
-        --offset-final: 0rem;
+        --offset-initial: 5vh;
+        --offset-final: -3vh;
+        --initial-font-size: 10vh;
+        --final-font-size: 20vh;
+        --glitch-inf-shadow: 2vw;
+        --line-height: 15vh;
     }
+    .glitch-int {
+        top: 4vh;
+    }
+    .glitch-inf {
+        top: 4vh;
+    }
+}
+
+@keyframes glitch-int {
+
+    0% {
+        text-shadow: var(--glitch-int-shadow) 0 red, calc(-1*var(--glitch-int-shadow)) 0 blue;
+        transform: translateX(var(--glitch-int-transform));
+        font-family: var(--initial-font);
+        text-transform: var(--text-case-initial);
+        top: var(--offset-initial);
+        font-size: var(--initial-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(var(--glitch-int-transform));
+    }
+
+    50% {
+        text-shadow: var(--glitch-int-shadow) 0 blue, calc(-1*var(--glitch-int-shadow)) 0 red;
+        transform: translateX(var(--glitch-int-transform));
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(var(--glitch-int-transform));
+    }
+
+    65% {
+        text-shadow: calc(-1*var(--glitch-int-shadow)) 0 red, var(--glitch-int-shadow) 0 blue;
+        transform: translateX(calc(-1*var(--glitch-int-transform)));
+        font-family: var(--initial-font);
+        text-transform: var(--text-case-initial);
+        top: var(--offset-initial);
+        font-size: var(--initial-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateX(calc(-1*var(--glitch-int-transform)));
+    }
+
+    75% {
+        text-shadow: calc(-1*var(--glitch-int-shadow)) 0 blue, var(--glitch-int-shadow) 0 red;
+        transform: translateX(calc(-1*var(--glitch-int-transform)));
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    100% {
+        text-shadow: none;
+        transform: translateX(0vw);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        top: var(--offset-final);
+        font-size: var(--final-font-size);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+@keyframes glitch-inf {
+
+    0% {
+        text-shadow: var(--glitch-inf-shadow) 0 red, calc(-1*var(--glitch-inf-shadow)) 0 blue;
+        transform: translateX(0vw);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        font-size: var(--final-font-size);
+        top: var(--offset-final);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    50% {
+        text-shadow: calc(-1*var(--glitch-inf-shadow)) 0 red, var(--glitch-inf-shadow) 0 blue;
+        transform: translateX(calc(-1*var(--glitch-inf-transform)));
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        font-size: var(--final-font-size);
+        top: var(--offset-final);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    65% {
+        text-shadow: var(--glitch-inf-shadow) 0 blue, calc(-1*var(--glitch-inf-shadow)) 0 red;
+        transform: translateX(var(--glitch-inf-transform));
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        font-size: var(--final-font-size);
+        top: var(--offset-final);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    75% {
+        text-shadow: calc(-1*var(--glitch-inf-shadow)) 0 blue, var(--glitch-inf-shadow) 0 red;
+        transform: translateX(0vw);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        font-size: var(--final-font-size);
+        top: var(--offset-final);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    100% {
+        text-shadow: none;
+        transform: translateX(0vw);
+        font-family: var(--final-font);
+        text-transform: var(--text-case-final);
+        font-size: var(--final-font-size);
+        top: var(--offset-final);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 }
