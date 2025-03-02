@@ -7,18 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="a cool website">
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
+    <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="/styles/w3.css">
     <link rel="stylesheet" href="/styles/master.css">
     <link rel="stylesheet" href="/styles/title_animation.css">
-    <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/arrow.css">
+    <style>
+      @media (min-width: 601px) {body {transform: scale(1.5); transform-origin: top center; overflow: hidden;} }
+      body { height: 200vh;}
+    </style>
   </head>
   
   <header style="overflow: hidden;">
-    <h1 class="w3-container glitch">
+    <h1 class="w3-container glitch" id="glitchElement">
       Dorado
     </h1>
   </header>
+  <script> // glitch-inf
+    setTimeout(() => document.getElementById('glitchElement').classList.replace('glitch', 'glitch-inf'), 4000);
+  </script>
   
   <body>
     <div class="w3-container w3-padding-64"></div>
@@ -30,17 +38,47 @@
       <p class="format w3-container animate__animated animate__fadeInUp animate__delay-1s">
         This is just a bunch of stuff that I've made and done</p>
     </div>
-    <div class="format w3-container w3-padding-16">
+
+    <div class="w3-container w3-padding 64"></div>
+    <div class="w3-container w3-padding 64"></div>
+    <div class="arrow-container">
+      <div class="arrow white"></div>
+      <div class="arrow red"></div>
+      <div class="arrow blue"></div>
+    </div>
+    
+    <!-- <style>
+    .square {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        position: fixed;
+        bottom: 0;  /* keeps it fixed at the bottom initially */
+        left: 50%;
+        transform: translateX(-50%); /* centers horizontally */
+        transition: transform 0.1s ease-out;
+    }
+    </style>
+    <div class="square"></div>
+    <script src="/styles/scroll.js"></script> -->
+    
+
+    <!-- <div class="format w3-container w3-padding-16">
       <a href="/pages/photography.html" style="font-family:'Overpass';"
-        class="w3-button w3-border w3-border-grey w3-round-large
-        animate__animated animate__fadeInUp animate__delay-2s">
+        class="w3-button w3-border w3-border-grey w3-round-large animate__animated animate__fadeInUp animate__delay-2s">
       Photography</a>
     </div>
     <div class="format w3-container w3-padding-16">
       <a href="/pages/3D.html" style="font-family:'Overpass';"
         class="w3-button w3-border w3-border-grey w3-round-large
         animate__animated animate__fadeInUp animate__delay-2s">
-      3D Art</a>
+      CGI & Game Design</a>
+    </div>
+    <div class="format w3-container w3-padding-16">
+      <a href="" style="font-family:'Overpass';"
+        class="w3-button w3-border w3-border-grey w3-round-large
+        animate__animated animate__fadeInUp animate__delay-2s">
+      painting</a>
     </div>
     <div class="format w3-container w3-padding-16">
       <a href="/pages/blog.html" style="font-family:'Overpass';"
@@ -48,7 +86,6 @@
         animate__animated animate__fadeInUp animate__delay-2s
         cool-hover">
       Blog</a>
-    </div>
+    </div> -->
   </body>
-
 </html>
