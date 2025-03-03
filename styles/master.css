@@ -9,6 +9,12 @@
 }
 
 @font-face {
+  font-family: 'Roboto Mono';
+  /* Dorado */
+  src: url('/styles/fonts/RobotoMono-Regular.ttf');
+}
+
+@font-face {
   font-family: 'Alex Brush'; /* Dorado */
   src: url('/styles/fonts/AlexBrush-Regular.ttf');
 }
@@ -37,9 +43,10 @@
   src: url('/styles/fonts/Sail-Regular.otf');
 }
 @font-face {
-  font-family: 'Roboto Mono'; /* Dorado */
-  src: url('/styles/fonts/RobotoMono-Regular.ttf');
+  font-family: 'Kaushan Script';
+  src: url('/styles/fonts/KaushanScript-Regular.ttf');
 }
+
 
 /* auto theme */
 :root {

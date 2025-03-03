@@ -1,23 +1,27 @@
 .underline {
     margin: 0;
     padding: 0;
-    position: inherit;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5vh;
     cursor: pointer;
 }
 
 .underline::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 7vh;
+    bottom: 3vh;
+    /* Adjusted for visibility */
     width: 0;
-    bottom: 0.8rem;
-    height: 1.2px;
-    background-color: var(--themeColor);
+    /* Start with 0 width */
+    height: 0.5vh;
+    background-color: currentColor;
     transition: width 0.3s ease-in-out;
 }
 
-@media (max-width: 600px) {
-    .underline::after {
-    bottom: 0.8rem;
-    }
+.underline:hover::after,
+.underline:focus::after {
+    width: 62%;
 }

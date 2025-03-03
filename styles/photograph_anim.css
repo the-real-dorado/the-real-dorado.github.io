@@ -1,0 +1,50 @@
+/* body {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+} */
+
+.photograph {
+    width: 40.5vh;
+    height: 64.5vh;
+    background-color: var(--notThemeColor);
+    margin-top: -64.5vh;
+    /* Keeps in flow */
+    position: relative;
+    transition: transform 2s cubic-bezier(0.2, 1, 0.3, 1);
+    /* Fast start, slow end */
+    color: var(--themeColor);
+    display: flex;
+    align-items: flex-start;
+}
+
+.photograph img {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+}
+
+.photograph3        {z-index: 1; transform: translateX(-80vw) rotate(0deg);}
+.photograph2        {z-index: 2; transform: translateX(-80vw) rotate(0deg);}
+.photograph1        {z-index: 3; transform: translateX(-80vw) rotate(0deg); cursor: pointer;}
+
+.photograph3.active {transform: translateX(-30vw) rotate( 2deg);}
+.photograph2.active {transform: translateX(-20vw) rotate(-7deg);}
+.photograph1.active {transform: translateX(-10vw) rotate( 5deg);}
+
+@media screen and (max-width: 600px) {
+
+    .photograph3        {z-index: 1; transform: translateX(-120vw) rotate(0deg);}
+    .photograph2        {z-index: 2; transform: translateX(-120vw) rotate(0deg);}
+    .photograph1        {z-index: 3; transform: translateX(-120vw) rotate(0deg); cursor: pointer;}
+
+    .photograph3.active {transform: translateX(-10vw) rotate( 2deg);}
+    .photograph2.active {transform: translateX( -5vw) rotate(-7deg);}
+    .photograph1.active {transform: translateX(  0vw) rotate( 5deg);}
+
+}
