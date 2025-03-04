@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/styles/title_anim.css">
     <link rel="stylesheet" href="/styles/arrow.css">
     <link rel="stylesheet" href="/styles/underline_anim.css">
-    <link rel="stylesheet" href="/styles/photograph_anim.css">
+    <link rel="stylesheet" href="/styles/photography_anim.css">
     
     <style>
       /* @media (min-width: 601px) {body {transform: scale(1.5); transform-origin: top center;} } */
@@ -47,10 +47,10 @@
     <div class="spacer-5 mobile"></div>
     <style>@media (min-width: 600px) {.mobile {display: none !important;}}</style>
     <div>
-      <p class="format w3-container animate__animated animate__fadeInUp"> 
-        Hi</p>
-      <p class="format w3-container animate__animated animate__fadeInUp animate__delay-1s">
-        I create what I imagine</p>
+      <p class="drd-format w3-container animate__animated animate__fadeInUp" 
+        style="font-size: 3.5vh;">Hi</p>
+      <p class="drd-format w3-container animate__animated animate__fadeInUp animate__delay-1s"
+        style="font-size: 3.5vh;">I create what I imagine</p>
     </div>
     
     <!-- arrows -->
@@ -65,7 +65,7 @@
     <!-- Photography-->
     <div class="spacer-50"></div>
     <div class="spacer-50"></div>
-    <div class="spacer-10"></div>
+    <!-- <div class="spacer-10"></div> -->
     <div class="photograph photograph3" style="background-color: blue;">
       <img src="/images/photography/film/bridge.jpg" alt="" 
       style=" opacity: 50%;">
@@ -74,16 +74,31 @@
       <img src="/images/photography/film/fence.jpg" alt=""
         style=" opacity: 50%">
     </div>
-    <div class="photograph photograph1 underline" onclick="window.location.href='/pages/photography.html';">
-      <p style="background-color: var(--notThemeColor);
-                  font-size: 5.8vh; padding-left: 4.5vh; padding-top: 48vh;
-                  font-family: 'Kaushan script';"> Photography</p>
-        <svg width="5vh" height="5vh" viewBox="0 0 40 40" fill="none" stroke="var(--themeColor)" stroke-width="0.5vh"
-          stroke-linecap="round" stroke-linejoin="round" style="transform: translateX(0vh) translateY(58.5vh);">
-          <line x1="4" y1="26" x2="24" y2="26"></line>
-          <polyline points="18 18 26 26 18 34"></polyline>
-        </svg>
+    <div class="photograph photograph1">
+      <!-- <p style="background-color: var(--notThemeColor);
+                font-size: 4.6vh; padding-left: 4.5vh; padding-top: 50vh;
+                font-family: 'Kalam';">Hethwood 6/23</p> -->
+      <!-- <p style="background-color: var(--notThemeColor);
+                font-size: 5vh; padding-left: 4.5vh; padding-top: 50vh;
+                font-family: 'Kalam';">Blacksburg, VA</p> -->
       <img src="/images/photography/film/basketball.jpg" alt="">
+    </div>
+    <div class="photography-container">
+      <div class="photography-box">
+      </div>
+      <div class="photography-box">
+        <h2 class="underline drd-format" id="photography" onclick="window.location.href='/pages/photography.html';"
+          style="--underline-bottom: 2.5vh; --underline-width: 45%">Photography
+          <svg id="photography-arrow" width="9vh" height="9vh" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.2vh"
+            stroke-linecap="butt" stroke-linejoin="miter" style="transform: translateX(0vh) translateY(-2vh);">
+            <line x1="4" y1="26" x2="26" y2="26"></line>
+            <polyline points="18 18 26 26 18 34"></polyline>
+          </svg></h2>
+        <p class="drd-format" id="OW"><em>"Sheer ignorance — you know, there’s no confidence to equal it […] 
+          I thought you could do anything with a camera that the eye could do..."</em></p>
+        <p class="drd-format" id="OW">— Orson Welles, on his approach to cinematography <br>
+          <em>(BBC Interview, 1960)</em></p>
+      </div>
     </div>
     <div class="spacer-50"></div>
 
@@ -92,38 +107,13 @@
     <div class="spacer-10"></div>
     <div class="scroll-container">
       <div class="scroll-item">
-        STUFF
+        "In my restless dreams, I see that town"
       </div>
     </div>
     <div class="spacer-10"></div>
     <div class="spacer-10"></div>
     <div class="debug-center"></div> -->
 
-    <script src="/scripts/photograph_anim.js"></script>
+    <script src="/scripts/photography_anim.js"></script>
   </body>
   </html>
-
-  <!-- <div class="format w3-container w3-padding-16">
-    <a href="/pages/photography.html" style="font-family:'Overpass';"
-    class="w3-button w3-border w3-border-grey w3-round-large animate__animated animate__fadeInUp animate__delay-2s">
-    Photography</a>
-  </div>
-  <div class="format w3-container w3-padding-16">
-    <a href="/pages/3D.html" style="font-family:'Overpass';"
-    class="w3-button w3-border w3-border-grey w3-round-large
-      animate__animated animate__fadeInUp animate__delay-2s">
-    CGI & Game Design</a>
-  </div>
-  <div class="format w3-container w3-padding-16">
-    <a href="" style="font-family:'Overpass';"
-      class="w3-button w3-border w3-border-grey w3-round-large
-      animate__animated animate__fadeInUp animate__delay-2s">
-    painting</a>
-  </div>
-  <div class="format w3-container w3-padding-16">
-    <a href="/pages/blog.html" style="font-family:'Overpass';"
-      class="w3-button w3-border w3-border-grey w3-round-large
-      animate__animated animate__fadeInUp animate__delay-2s
-      cool-hover">
-    Blog</a>
-  </div> -->

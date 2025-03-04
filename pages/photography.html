@@ -9,12 +9,58 @@
     <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="/styles/w3.css">
     <link rel="stylesheet" href="/styles/master.css">
+
+    <style>
+      /* responsive gallery */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 80px;
+      }
+      .column img {
+        vertical-align: middle;
+        width: 100%;
+        padding: 20px;
+      }
+      /*4 columns*/
+      /* .column {
+        flex: 25%;
+        max-width: 25%;
+      } */
+      /*3 columns*/
+      /* @media screen and (max-width: 1200px) { */
+        .column {
+          flex: 33%;
+          max-width: 33%;
+        }
+      /* } */
+      /*2 columns*/
+      @media screen and (max-width: 900px) {
+        .column {
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+      /*1 column*/
+      @media screen and (max-width: 600px) {
+        .column {
+          flex: 100%;
+          max-width: 100%;
+        }
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 20px;
+        }
+      }
+    </style>
+    
   </head>
   <header>
     <div class="w3-container w3-padding-16"></div>
     <h1 class="w3-container small-title">
     <a style="text-decoration:none; font-family: 'Limelight';" href="/index.html">
-      Photography</a></h1>
+      PHOTOGRAPHY</a></h1>
   </header>
   <!-- film / digital -->
   <body>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <title>dorado</title>
     <meta charset="utf-8">
@@ -9,13 +10,50 @@
     <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="/styles/w3.css">
     <link rel="stylesheet" href="/styles/master.css">
+
+    <style>
+      /* 3D */
+      .row2 {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 80px;
+      }
+      .column2 img {
+        vertical-align: middle;
+        width: 100%;
+        padding: 5px;
+      }
+      .column2 #space{
+        padding: 20px;
+      }
+      /*2 columns*/
+      .column2 {
+        flex: 50%;
+        max-width: 50%;
+      }
+      /*1 column*/
+      @media screen and (max-width: 600px) {
+        .column2 {
+          flex: 100%;
+          max-width: 100%;
+        }
+        .row2 {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 20px;
+        }
+      }
+    </style>
+
   </head>
+
   <header>
     <div class="w3-container w3-padding-16"></div>
     <h1 class="w3-container">
     <a style="text-decoration:none;" href="/index.html">
       3D ART</a></h1>
   </header>
+  
   <body>
     <div class="row2">
       <div class="column2">
@@ -40,4 +78,5 @@
       </div>
     </div>
   </body>
+
 </html>
