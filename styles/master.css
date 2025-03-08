@@ -1,4 +1,4 @@
-/* custom fonts */
+/* fonts */
 @font-face {
     font-family: 'Playfair Display';
     src: url('/styles/fonts/PlayfairDisplay-Regular.ttf');
@@ -46,6 +46,10 @@
   font-family: 'Kaushan Script';
   src: url('/styles/fonts/KaushanScript-Regular.ttf');
 }
+@font-face {
+  font-family: 'Kalam';
+  src: url('/styles/fonts/Kalam-Variable.ttf');
+}
 
 
 /* auto theme */
@@ -71,44 +75,46 @@
   }
 }
 
-
-/* title */
-header h1{
-  font-family: 'Playfair Display', serif;
-  font-size: 4rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-/* small title */
-@media screen and (max-width: 600px) {
-.small-title {
-  font-size: 10.5vw;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  }
-}
-
-
-
-/* general format */
-.format {
+.drd-format {
   font-family: 'Overpass', serif;
-  font-size: 2rem;
+  justify-content: flex-start;
+  align-items:center;
   text-align: center;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
+body p { font-size: 3vh;}
+
+body h2{ font-size: 7vh;}
+
 @media screen and (max-width: 600px) {
-  .format{
-    font-size: 1.5rem;
+  body h2 { font-size: 6vh;}
+  #photography {justify-content: center;}
+}
+
+@media screen and (min-width: 600px) {
+  #OW {
+    text-align: justify;
+  }
+  #photography-arrow{
+    width: 11vh;
+    height: 11vh;
+    transform: translateX(2vh) translateY(-2.5vh) !important;
   }
 }
 
 
+@media screen and (max-width: 600px) {
+  .small-title {
+    font-size: 10.5vw;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+/* where?? */
 /* body */
+/* messing up in 3D-scroll 
 .card3D img, video {
   display: block;
   margin-left: auto;
@@ -131,92 +137,4 @@ header h1{
     max-width: 100%;
   }
 }
-
-
-/* responsive gallery */
-
-/* photography */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 80px;
-}
-
-.column img {
-  vertical-align: middle;
-  width: 100%;
-  padding: 20px;
-}
-
-/*4 columns*/
-/* .column {
-  flex: 25%;
-  max-width: 25%;
-} */
-
-/*3 columns*/
-/* @media screen and (max-width: 1200px) { */
-  .column {
-    flex: 33%;
-    max-width: 33%;
-  }
-/* } */
-
-/*2 columns*/
-@media screen and (max-width: 900px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/*1 column*/
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-}
-
-/* 3D */
-
-.row2 {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 80px;
-}
-
-.column2 img {
-  vertical-align: middle;
-  width: 100%;
-  padding: 5px;
-}
-
-.column2 #space{
-  padding: 20px;
-}
-
-/*2 columns*/
-.column2 {
-  flex: 50%;
-  max-width: 50%;
-}
-
-/*1 column*/
-@media screen and (max-width: 600px) {
-  .column2 {
-    flex: 100%;
-    max-width: 100%;
-  }
-
-  .row2 {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-}
+*/

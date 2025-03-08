@@ -5,57 +5,69 @@
     /* update preload in HTML */
     --text-case-initial: uppercase;
     --text-case-final: capitalize;
-    --offset-initial: 10vh;
-    --offset-final: 10vh;
+    --top-initial: 0vh;
+    --top-final: 0vh;
     /* 0rem for mobile */
-    --initial-font-size: 10vh;
-    --final-font-size: 20vh;
+    --font-size-intial: 10vh;
+    --font-size-final: 20vh;
     --glitch-int-shadow: 5vw;
     --glitch-int-transform: 1vw;
     --glitch-inf-shadow: 0.5vw;
     --glitch-inf-transform: 1vw;
-    --line-height: 10vh;
+    --line-height: 20vh;
+    --custom-position: relative;
+    --custom-left: 0;
+}
+
+.glitch-container {
+    position: relative;
+    width: 80vh;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.glitch-container p{
+    /* background-color: blueviolet; */
+    padding-left: 5vh;
+    padding-right: 5vh;
 }
 
 .glitch-int {
     font-family: var(--initial-font);
     text-transform: var(--text-case-initial);
-    font-size: var(--initial-font-size);
+    font-size: var(--font-size-intial);
     line-height: var(--line-height);
-    position: absolute;
+    position: var(--custom-position);
     animation: glitch-int 0.5s steps(3, end) 1 forwards;
-    left: 50%;
-    top: var(--offset-final);
-    transform: translateX(-50%);
+    left: var(--custom-left);
+    top: var(--top-final);
+    transform: translateX(0);
     animation-delay: 3s;
 }
 
 .glitch-inf {
     font-family: var(--final-font);
     text-transform: var(--text-case-final);
-    font-size: var(--final-font-size);
+    font-size: var(--font-size-final);
     line-height: var(--line-height);
-    position: absolute;
+    position: var(--custom-position);
     animation: glitch-inf 2s steps(5, end) infinite;
-    left: 50%;
-    top: var(--offset-final);
-    transform: translateX(-50%);
+    left: var(--custom-left);
+    top: var(--top-final);
+    transform: translateX(0);
 }
 
 @media screen and (max-width: 600px) {
     :root {
-        --offset-initial: 5vh;
-        --offset-final: -3vh;
-        --initial-font-size: 10vh;
-        --final-font-size: 20vh;
+        --top-initial: 0vh;
+        --top-final: 0vh;
+        --font-size-intial: 10vh;
+        --font-size-final: 20vh;
         --glitch-inf-shadow: 2vw;
-        --line-height: 15vh;
-    }
-    .glitch-int {
-        top: 4vh;
-    }
-    .glitch-inf {
-        top: 4vh;
+        --line-height: 20vh;
     }
 }
 
@@ -66,11 +78,11 @@
         transform: translateX(var(--glitch-int-transform));
         font-family: var(--initial-font);
         text-transform: var(--text-case-initial);
-        top: var(--offset-initial);
-        font-size: var(--initial-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(var(--glitch-int-transform));
+        top: var(--top-initial);
+        font-size: var(--font-size-intial);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0) translateX(var(--glitch-int-transform));
     }
 
     50% {
@@ -78,11 +90,11 @@
         transform: translateX(var(--glitch-int-transform));
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(var(--glitch-int-transform));
+        top: var(--top-final);
+        font-size: var(--font-size-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0) translateX(var(--glitch-int-transform));
     }
 
     65% {
@@ -90,11 +102,11 @@
         transform: translateX(calc(-1*var(--glitch-int-transform)));
         font-family: var(--initial-font);
         text-transform: var(--text-case-initial);
-        top: var(--offset-initial);
-        font-size: var(--initial-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateX(calc(-1*var(--glitch-int-transform)));
+        top: var(--top-initial);
+        font-size: var(--font-size-intial);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0) translateX(calc(-1*var(--glitch-int-transform)));
     }
 
     75% {
@@ -102,11 +114,11 @@
         transform: translateX(calc(-1*var(--glitch-int-transform)));
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        top: var(--top-final);
+        font-size: var(--font-size-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
     100% {
@@ -114,11 +126,11 @@
         transform: translateX(0vw);
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        top: var(--offset-final);
-        font-size: var(--final-font-size);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        top: var(--top-final);
+        font-size: var(--font-size-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
 }
@@ -130,11 +142,11 @@
         transform: translateX(0vw);
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: var(--font-size-final);
+        top: var(--top-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
     50% {
@@ -142,11 +154,11 @@
         transform: translateX(calc(-1*var(--glitch-inf-transform)));
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: var(--font-size-final);
+        top: var(--top-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
     65% {
@@ -154,11 +166,11 @@
         transform: translateX(var(--glitch-inf-transform));
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: var(--font-size-final);
+        top: var(--top-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
     75% {
@@ -166,11 +178,11 @@
         transform: translateX(0vw);
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: var(--font-size-final);
+        top: var(--top-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
     100% {
@@ -178,11 +190,11 @@
         transform: translateX(0vw);
         font-family: var(--final-font);
         text-transform: var(--text-case-final);
-        font-size: var(--final-font-size);
-        top: var(--offset-final);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: var(--font-size-final);
+        top: var(--top-final);
+        position: var(--custom-position);
+        left: var(--custom-left);
+        transform: translateX(0);
     }
 
 }
