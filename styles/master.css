@@ -1,4 +1,4 @@
-/* fonts */
+/* custom fonts */
 @font-face {
     font-family: 'Playfair Display';
     src: url('/styles/fonts/PlayfairDisplay-Regular.ttf');
@@ -103,15 +103,6 @@ body h2{ font-size: 7vh;}
   }
 }
 
-
-@media screen and (max-width: 600px) {
-  .small-title {
-    font-size: 10.5vw;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-}
-
 /* where?? */
 /* body */
 /* messing up in 3D-scroll 
@@ -126,7 +117,8 @@ body h2{ font-size: 7vh;}
   .card3D img, video {
     max-width: 80%;
   }
-}
+} 
+/* update size
 @media screen and (max-width: 900px) {
   .card3D img, video {
     max-width: 90%;
@@ -136,5 +128,4 @@ body h2{ font-size: 7vh;}
   .card3D img, body video {
     max-width: 100%;
   }
-}
-*/
+} */
