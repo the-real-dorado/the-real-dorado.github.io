@@ -8,11 +8,11 @@
     --top-initial: 0vh;
     --top-final: 0vh;
     /* 0rem for mobile */
-    --font-size-intial: 10vh;
-    --font-size-final: 20vh;
+    --font-size-intial: 15vh;
+    --font-size-final: 30vh;
     --glitch-int-shadow: 5vw;
     --glitch-int-transform: 1vw;
-    --glitch-inf-shadow: 0.5vw;
+    --glitch-inf-shadow: 0.4vw;
     --glitch-inf-transform: 1vw;
     --line-height: 20vh;
     --custom-position: relative;
@@ -22,7 +22,7 @@
 .glitch-container {
     position: relative;
     width: 80vh;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,13 +60,13 @@
     transform: translateX(0);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     :root {
         --top-initial: 0vh;
         --top-final: 0vh;
         --font-size-intial: 10vh;
         --font-size-final: 20vh;
-        --glitch-inf-shadow: 2vw;
+        --glitch-inf-shadow: 1.5vw;
         --line-height: 20vh;
     }
 }

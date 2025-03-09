@@ -10,40 +10,45 @@
     
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
     <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="/styles/master.css">
 
-    <link rel="stylesheet" href="/styles/title_anim.css">
+    <link rel="stylesheet" href="/styles/title.css">
     <link rel="stylesheet" href="/styles/arrow.css">
-    <link rel="stylesheet" href="/styles/underline_anim.css">
-    <link rel="stylesheet" href="/styles/photography_anim.css">
-    <link rel="stylesheet" href="/styles/3D_anim.css">
+    <link rel="stylesheet" href="/styles/photography.css">
+    <!-- <link rel="stylesheet" href="/styles/underline.css"> -->
+    
+    <!-- <link rel="stylesheet" href="/styles/3D.css"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script> -->
     
     <style>
-      /* @media (min-width: 601px) {body {transform: scale(1.5); transform-origin: top center;} } */
+      /* @media (min-width: 769px) {body {transform: scale(1.5); transform-origin: top center;} } */
       body {overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;}
       .spacer-5 {padding-top:2.5vh!important;  padding-bottom:2.5vh!important;}
       .spacer-10{padding-top:  5vh!important;  padding-bottom:  5vh!important;}
       .spacer-50{padding-top:  25vh!important; padding-bottom: 25vh!important;}
-      @media (min-width: 600px) {.only-mobile {display: none !important;}}
-      @media (max-width: 600px) {.only-desktop {display: none !important;}}
+      @media (min-width: 769px) {.only-mobile {display: none !important;}}
+      @media (max-width: 768px) {.only-desktop {display: none !important;}}
     </style>
     <script>
       window.history.scrollRestoration = "manual";
       document.addEventListener("DOMContentLoaded", function () { window.scrollTo(0, 0); });
       window.onload = function () { window.scrollTo(0, 0); };
+      document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(ScrollTrigger)});
+      // document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(Flip, ScrollTrigger)});
     </script>
   </head>
   
   
   <header>
-    <div class="spacer-5 only-mobile"></div>
+    <div class="spacer-10"></div>
     <div class="glitch-container">
       <p class="glitch-int" id="glitchElement">
         Dorado
       </p>
     </div>
-    <!-- <div class="spacer-10"></div> -->
   </header>
   <script> // glitch-inf
     setTimeout(() => document.getElementById('glitchElement').classList.replace('glitch-int', 'glitch-inf'), 4000);
@@ -51,63 +56,94 @@
   
   
   <body>
+    
     <!-- intro  -->
-    <!-- <div class="spacer-5 only-mobile"></div> -->
     <div>
-      <p class="drd-format animate__animated animate__fadeInUp" 
-        style="font-size: 3.5vh;">Hi</p>
-      <p class="drd-format animate__animated animate__fadeInUp animate__delay-1s"
-        style="font-size: 3.5vh;">I create what I imagine</p>
+      <p id="intro-1"
+      style="font-size: 3.5vh;">Hi</p>
+      <p id="intro-2"
+      style="font-size: 3.5vh;">I create what I imagine</p>
     </div>
+    <script>
+      gsap.from("#intro-1", { opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
+      gsap.from("#intro-2", { opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1 });
+      </script>
+    <!-- intro  -->
+    
+    <div class="spacer-10"></div>
     
     <!-- arrows -->
-    <div class="spacer-10"></div>
     <div class="arrow-container">
       <div class="arrow white"></div>
       <div class="arrow red"></div>
       <div class="arrow blue"></div>
     </div>
-    <div class="spacer-10"></div>
+    <script>
+      gsap.from(".arrow.white", { opacity: 0, duration: 1, ease: "power2.out", delay: 2  });
+      gsap.from(".arrow.red",   { opacity: 0, duration: 1, ease: "power2.out", delay: 2.2});
+      gsap.from(".arrow.blue",  { opacity: 0, duration: 1, ease: "power2.out", delay: 2.4});
+      gsap.to  (".arrow.white", { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4  , repeat: -1});
+      gsap.to  (".arrow.red",   { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
+      gsap.to  (".arrow.blue",  { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
+    </script>
+    <!-- arrows -->
+
+    <!-- <div class="spacer-10 only-desktop"></div>
+    <div class="spacer-10 only-desktop"></div> -->
+    <div class="spacer-50"></div>
     
     <!-- Photography-->
-    <div class="spacer-50"></div>
-    <div class="spacer-50"></div>
-    <!-- <div class="spacer-10"></div> -->
-    <div class="photograph photograph3" style="background-color: blue;">
-      <img src="/images/photography/film/bridge.jpg" alt="" 
-      style=" opacity: 50%;">
-    </div>
-    <div class="photograph photograph2" style="background-color: red;">
-      <img src="/images/photography/film/fence.jpg" alt=""
-        style=" opacity: 50%">
-    </div>
-    <div class="photograph photograph1">
-      <!-- <p style="background-color: var(--notThemeColor);
-                font-size: 4.6vh; padding-left: 4.5vh; padding-top: 50vh;
-                font-family: 'Kalam';">Hethwood 6/23</p> -->
-      <!-- <p style="background-color: var(--notThemeColor);
-                font-size: 5vh; padding-left: 4.5vh; padding-top: 50vh;
-                font-family: 'Kalam';">Blacksburg, VA</p> -->
-      <img src="/images/photography/film/basketball.jpg" alt="">
-    </div>
-    <div class="photography-container">
-      <div class="photography-box">
+    <div class="photography-container"> <!-- preload images-->
+      <div class="photography-left">
+        <div class="photography-item photograph" id="photograph-3" style="background-color: blue;"> 
+          <img src="/images/photography/film/bridge.jpg" alt="" style=" opacity: 50%;">
+        </div>
+        <div class="photography-item photograph" id="photograph-2" style="background-color: red;"> 
+          <img src="/images/photography/film/fence.jpg" alt="" style=" opacity: 50%">
+        </div>
+        <div class="photography-item photograph" id="photograph-1" style="background-color: white;"> 
+          <img src="/images/photography/film/basketball.jpg" alt="">
+        </div>
       </div>
-      <div class="photography-box">
-        <h2 class="underline drd-format" id="photography" onclick="window.location.href='/pages/photography.html';"
-          style="--underline-bottom: 2.5vh; --underline-width: 45%">Photography
-          <svg id="photography-arrow" width="9vh" height="9vh" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.2vh"
-            stroke-linecap="butt" stroke-linejoin="miter" style="transform: translateX(0vh) translateY(-2vh);">
-            <line x1="4" y1="26" x2="26" y2="26"></line>
-            <polyline points="18 18 26 26 18 34"></polyline>
-          </svg></h2>
-        <p class="drd-format" id="OW"><em>"Sheer ignorance — you know, there’s no confidence to equal it […] 
-          I thought you could do anything with a camera that the eye could do..."</em></p>
-        <p class="drd-format" id="OW">— Orson Welles, on his approach to cinematography <br>
-          <em>(BBC Interview, 1960)</em></p>
+      <div class="photography-right">
+        <div>
+          <div class="spacer-5 only-mobile"></div>
+          <h2 id="photography-title"> <!--onclick="window.location.href='/pages/photography.html';"-->
+            Photography
+            <svg id="photography-arrow" width="6vh" height="6vh" viewBox="5 18 25 20"
+              fill="none" stroke="currentColor" stroke-width="0.1vh"
+              stroke-linecap="butt" stroke-linejoin="miter"
+              style="transform: translateX(0vh) translateY(0.75vh);">
+              <line x1="6" y1="26" x2="26" y2="26"></line>
+              <polyline points="18 18 26 26 18 34"></polyline>
+            </svg> <!-- desktop - css -->
+          </h2>
+          <p id="photography-text"><em>"Sheer ignorance — you know, there’s no confidence to equal it […]
+              I thought you could do anything with a camera that the eye could do..."</em></p>
+          <p id="photography-text">— Orson Welles, on his approach to cinematography <br>
+            <em>(BBC Interview, 1960)</em>
+          </p>  
+        </div>
       </div>
+      <script>
+        let mm=gsap.matchMedia();
+        mm.add("(min-width: 769px)", ()=> { // desktop
+          gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
+          gsap.to("#photograph-2",        {scrollTrigger:  "#photography-title" , x: " -2vw", rotation: -7, duration: 1, ease: "power2.out"});
+          gsap.to("#photograph-1",        {scrollTrigger:  "#photography-title" , x: "-12vw", rotation:  5, duration: 1, ease: "power1.out"});
+          gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
+          gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1});
+        });
+        mm.add("(max-width: 768px)", ()=> { // mobile
+          gsap.to("#photograph-3",        {scrollTrigger:  "#photograph-1" , x: "  2vw", rotation:  2, duration: 1, ease: "power1.out"});
+          gsap.to("#photograph-2",        {scrollTrigger:  "#photograph-1" , x: "-28vw", rotation: -7, duration: 1, ease: "power1.out"});
+          gsap.to("#photograph-1",        {scrollTrigger:  "#photograph-1" , x: "-58vw", rotation:  5, duration: 1, ease: "power1.out"});
+          gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
+          gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
+          });
+      </script>
     </div>
-    <div class="spacer-50 only-desktop"></div>
+    <!-- Photography-->
     
     <!-- 3D & Game Design -->
     <!-- <div class="spacer-10"></div>
@@ -137,6 +173,7 @@
     <div class="spacer-10"></div>
     <div class="spacer-50"></div> -->
     
+    <div class="spacer-50 only-desktop"></div>
     <div class="spacer-10"></div>
     <div> 
       <p style="font-family: Roboto Mono; font-size: 2vh; text-align: center;">
@@ -145,7 +182,6 @@
     </div>
     <div class="spacer-10"></div>
 
-    <script src="/scripts/photography_anim.js"></script>
     <!-- <script src="/scripts/3D_anim.js"></script> -->
   </body>
 

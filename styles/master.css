@@ -10,7 +10,6 @@
 
 @font-face {
   font-family: 'Roboto Mono';
-  /* Dorado */
   src: url('/styles/fonts/RobotoMono-Regular.ttf');
 }
 
@@ -75,32 +74,23 @@
   }
 }
 
-.drd-format {
+body {
   font-family: 'Overpass', serif;
   justify-content: flex-start;
   align-items:center;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */ 
+  /* ^ x-scroll issue */
 }
 
-body p { font-size: 3vh;}
-
-body h2{ font-size: 7vh;}
-
-@media screen and (max-width: 600px) {
-  body h2 { font-size: 6vh;}
-  #photography {justify-content: center;}
+body p { 
+  font-size: 3vh;
+  font-weight: normal;
 }
 
-@media screen and (min-width: 600px) {
-  #OW {
-    text-align: justify;
-  }
-  #photography-arrow{
-    width: 11vh;
-    height: 11vh;
-    transform: translateX(2vh) translateY(-2.5vh) !important;
-  }
+body h2{ 
+  font-size: 7vh;
+  font-weight: normal;
 }
 
 /* where?? */
@@ -124,7 +114,7 @@ body h2{ font-size: 7vh;}
     max-width: 90%;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .card3D img, body video {
     max-width: 100%;
   }
