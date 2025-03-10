@@ -1,4 +1,16 @@
-/* custom fonts */
+/* Inter */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+/* extra fonts */
 @font-face {
     font-family: 'Playfair Display';
     src: url('/styles/fonts/PlayfairDisplay-Regular.ttf');
@@ -49,7 +61,28 @@
   font-family: 'Kalam';
   src: url('/styles/fonts/Kalam-Variable.ttf');
 }
+@font-face {
+  font-family:'Bebas Neue';
+  src: url('/styles/fonts/BebasNeue-Regular.ttf');
+}
+@font-face {
+  font-family:'Anton';
+  src: url('/styles/fonts/Anton-Regular.ttf');
+}
+@font-face {
+  font-family:'Monument Extended';
+  src: url('/styles/fonts/MonumentExtended-Regular.otf');
+}
+@font-face {
+  font-family:'Monument Extended Ultrabold';
+  src: url('/styles/fonts/MonumentExtended-Ultrabold.otf');
+}
+@font-face {
+  font-family:'Melodrama';
+  src: url('/styles/fonts/Melodrama-Variable.ttf');
+}
 
+::-webkit-scrollbar { display: none; }
 
 /* auto theme */
 :root {
@@ -75,7 +108,8 @@
 }
 
 body {
-  font-family: 'Overpass', serif;
+  font-family: 'Inter', sans-serif;
+  /* font-family: 'Overpass', sans-serif; */
   justify-content: flex-start;
   align-items:center;
   text-align: center;
@@ -85,12 +119,13 @@ body {
 
 body p { 
   font-size: 3vh;
-  font-weight: normal;
+  font-weight: 200;
+  /* letter-spacing: -0.03em; */
 }
 
 body h2{ 
   font-size: 7vh;
-  font-weight: normal;
+  font-weight: 200;
 }
 
 /* where?? */

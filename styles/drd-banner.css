@@ -1,0 +1,40 @@
+.drd-banner-row {
+  display: flex;
+  justify-content: left;
+  gap: 23vh;
+  width: 100vw;
+  background-color: aliceblue;
+}
+
+.drd-banner-stack {
+  position: relative;
+  display: inline-block;
+}
+
+.drd-banner-stack p {
+  font-size: 8vh;
+  letter-spacing: -0.1em;
+  font-weight: 700;
+  position: absolute;
+  /* white-space: nowrap;
+  color: transparent; */
+}
+
+@media screen and (max-width: 768px) { /* mobile */
+  /* .drd-banner-row{ gap: 11.5vh;}
+  .drd-banner-stack p{ font-size: 4vh;} */
+  .drd-banner-row{ gap: 17.5vh;}
+  .drd-banner-stack p{ font-size: 6vh;}
+}
+
+/* .blu {-webkit-text-stroke: 0.04em  blue;}
+.red {-webkit-text-stroke: 0.02em   red;}
+.wht {-webkit-text-stroke: 0.01em white;} */
+
+.blu {color:  blue;}
+.red {color:   red;}
+.wht {color: white;}
+
+.top { top:-0.5em; left:-1.55em;}
+.mid { top: 0.0em; left:-1.00em;}
+.bot { top: 0.5em; left:-0.45em;}
