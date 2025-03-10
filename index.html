@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="a cool website">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
     <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -15,6 +17,7 @@
     <link rel="stylesheet" href="/styles/title.css">
     <link rel="stylesheet" href="/styles/arrow.css">
     <link rel="stylesheet" href="/styles/photography.css">
+    <link rel="stylesheet" href="/styles/drd-banner.css">
     <!-- <link rel="stylesheet" href="/styles/underline.css"> -->
     
     <!-- <link rel="stylesheet" href="/styles/3D.css"> -->
@@ -37,7 +40,6 @@
       document.addEventListener("DOMContentLoaded", function () { window.scrollTo(0, 0); });
       window.onload = function () { window.scrollTo(0, 0); };
       document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(ScrollTrigger)});
-      // document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(Flip, ScrollTrigger)});
     </script>
   </head>
   
@@ -45,7 +47,7 @@
   <header>
     <div class="spacer-10"></div>
     <div class="glitch-container">
-      <p class="glitch-int" id="glitchElement">
+      <p class="glitch-int" id="glitchElement" style="letter-spacing: normal;">
         Dorado
       </p>
     </div>
@@ -79,9 +81,9 @@
       <div class="arrow blue"></div>
     </div>
     <script>
-      gsap.from(".arrow.white", { opacity: 0, duration: 1, ease: "power2.out", delay: 2  });
-      gsap.from(".arrow.red",   { opacity: 0, duration: 1, ease: "power2.out", delay: 2.2});
-      gsap.from(".arrow.blue",  { opacity: 0, duration: 1, ease: "power2.out", delay: 2.4});
+      gsap.from(".arrow.white", { opacity: 0, duration:    1, ease: "power2.out", delay: 2  });
+      gsap.from(".arrow.red",   { opacity: 0, duration: 0.25, ease: "power2.out", delay: 3});
+      gsap.from(".arrow.blue",  { opacity: 0, duration: 0.25, ease: "power2.out", delay: 3});
       gsap.to  (".arrow.white", { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4  , repeat: -1});
       gsap.to  (".arrow.red",   { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
       gsap.to  (".arrow.blue",  { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
@@ -91,9 +93,10 @@
     <!-- <div class="spacer-10 only-desktop"></div>
     <div class="spacer-10 only-desktop"></div> -->
     <div class="spacer-50"></div>
-    
-    <!-- Photography-->
-    <div class="photography-container"> <!-- preload images-->
+
+
+    <!-- Photography--> <!-- preload images--> <!--add link-->
+    <div class="photography-container">
       <div class="photography-left">
         <div class="photography-item photograph" id="photograph-3" style="background-color: blue;"> 
           <img src="/images/photography/film/bridge.jpg" alt="" style=" opacity: 50%;">
@@ -110,10 +113,10 @@
           <div class="spacer-5 only-mobile"></div>
           <h2 id="photography-title"> <!--onclick="window.location.href='/pages/photography.html';"-->
             Photography
-            <svg id="photography-arrow" width="6vh" height="6vh" viewBox="5 18 25 20"
-              fill="none" stroke="currentColor" stroke-width="0.1vh"
+            <svg id="photography-arrow" width="1em" height="1em" viewBox="5 18 25 20"
+              fill="none" stroke="currentColor" stroke-width="0.025em"
               stroke-linecap="butt" stroke-linejoin="miter"
-              style="transform: translateX(0vh) translateY(0.75vh);">
+              style="transform: translateX(0em) translateY(0.25em);">
               <line x1="6" y1="26" x2="26" y2="26"></line>
               <polyline points="18 18 26 26 18 34"></polyline>
             </svg> <!-- desktop - css -->
@@ -125,30 +128,31 @@
           </p>  
         </div>
       </div>
-      <script>
-        let mm=gsap.matchMedia();
-        mm.add("(min-width: 769px)", ()=> { // desktop
-          gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
-          gsap.to("#photograph-2",        {scrollTrigger:  "#photography-title" , x: " -2vw", rotation: -7, duration: 1, ease: "power2.out"});
-          gsap.to("#photograph-1",        {scrollTrigger:  "#photography-title" , x: "-12vw", rotation:  5, duration: 1, ease: "power1.out"});
-          gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
-          gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1});
-        });
-        mm.add("(max-width: 768px)", ()=> { // mobile
-          gsap.to("#photograph-3",        {scrollTrigger:  "#photograph-1" , x: "  2vw", rotation:  2, duration: 1, ease: "power1.out"});
-          gsap.to("#photograph-2",        {scrollTrigger:  "#photograph-1" , x: "-28vw", rotation: -7, duration: 1, ease: "power1.out"});
-          gsap.to("#photograph-1",        {scrollTrigger:  "#photograph-1" , x: "-58vw", rotation:  5, duration: 1, ease: "power1.out"});
-          gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
-          gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
-          });
-      </script>
     </div>
+    <script>
+      let mm=gsap.matchMedia();
+      mm.add("(min-width: 769px)", ()=> { // desktop
+        gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
+        gsap.to("#photograph-2",        {scrollTrigger:  "#photography-title" , x: " -2vw", rotation: -7, duration: 1, ease: "power2.out"});
+        gsap.to("#photograph-1",        {scrollTrigger:  "#photography-title" , x: "-12vw", rotation:  5, duration: 1, ease: "power1.out"});
+        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
+        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1});
+      });
+      mm.add("(max-width: 768px)", ()=> { // mobile
+        gsap.to("#photograph-3",        {scrollTrigger:  "#photograph-1" , x: "  2vw", rotation:  2, duration: 1, ease: "power1.out"});
+        gsap.to("#photograph-2",        {scrollTrigger:  "#photograph-1" , x: "-28vw", rotation: -7, duration: 1, ease: "power1.out"});
+        gsap.to("#photograph-1",        {scrollTrigger:  "#photograph-1" , x: "-58vw", rotation:  5, duration: 1, ease: "power1.out"});
+        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
+        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
+        });
+    </script>
     <!-- Photography-->
     
-    <!-- 3D & Game Design -->
-    <!-- <div class="spacer-10"></div>
     <div class="spacer-10"></div>
-    <div class="scroll-container">
+    <div class="spacer-10"></div>
+    
+    <!-- 3D & Game Design -->
+    <!-- <div class="scroll-container">
       <div class="scroll-item">
         <div class="scroll-content" style="left: 50vw;"> -->
           <!-- once per load -->
@@ -163,26 +167,39 @@
         <!-- </div>
       </div>
     </div> -->
-    <!-- <div class="scroll-item">
-      <div class="scroll-content" style="left: 20vw; background-color: bisque;">
-              "In my restless dreams, I see that town"</div>
-      </div>
-    </div> -->
-
-    <!-- <div class="spacer-10"></div>
-    <div class="spacer-10"></div>
-    <div class="spacer-50"></div> -->
+    <!-- <div>
+      <p style="font-size: 8vh; letter-spacing: -0.1em; font-weight: 400;" id="target-text">
+        in my restless dreams <br> i see that town
+      </p>
+    </div>
+    <script>
+      let target = document.getElementById("target-text");
+      target.innerHTML = target.innerHTML.replace(/e/g, '<span class="rotated">e</span>');
+    </script>
+    <style>
+      .rotated {
+        display: inline-block; /* Allows rotation */
+        transform: rotate(-7deg); /* Adjust angle as needed */
+    }
+    </style> -->
     
-    <div class="spacer-50 only-desktop"></div>
     <div class="spacer-10"></div>
-    <div> 
-      <p style="font-family: Roboto Mono; font-size: 2vh; text-align: center;">
+    <div class="drd-banner-row" style="transform: rotate(-7deg);"></div>
+    <div class="spacer-10"></div>
+
+    <!-- <div class="spacer-50"></div> -->
+    <div class="spacer-10"></div>
+    <div style="display: flex; justify-content: flex-end; width: 90vw;"> 
+      <p style="font-family: Inter; text-align: right;">
         The site is being reimagined. <br> See you soon.
       </p>
     </div>
-    <div class="spacer-10"></div>
+    <div class="spacer-5 only-desktop"></div>
 
     <!-- <script src="/scripts/3D_anim.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <script src="/scripts/lenis_scroll.js"></script>
+    <script src="/scripts/drd-banner.js"></script>
   </body>
 
 

@@ -22,7 +22,7 @@
 
 .photography-right {
     /* background: lightgray; */
-    padding: 2vw;
+    padding: 0vw;
     text-align: center;
     display: flex;
     align-items: center;
@@ -32,10 +32,8 @@
 .photograph {
     width: 40.5vh;
     height: 64.5vh;
-    background-color: var(--notThemeColor);
     /* margin-top: -64.5vh; */
     position: relative;
-    color: var(--themeColor);
     display: flex;
     align-items: flex-start;
     filter: drop-shadow(-1vh 0 0.3vh rgba(0, 0, 0, 0.5));
@@ -53,21 +51,21 @@
 #photograph-2 {z-index: 2; transform: translateX(-60vw);}
 #photograph-1 {z-index: 3; transform: translateX(-60vw);}
 
+#photography-title{
+    text-align: left;
+    letter-spacing: -0.1em;
+    font-weight: 400;
+    font-size: 10vh;
+}
+#photography-text { text-align: justify; }
+
 @media screen and (max-width: 768px) { /* mobile */
     .photography-container {grid-template-columns: 1fr;}
+    .photography-left{grid-template-columns: repeat(3, minmax(0, 1fr)); }
     #photograph-3 { z-index: 1; transform: translateX(-180vw); }
     #photograph-2 { z-index: 2; transform: translateX(-180vw); }
     #photograph-1 { z-index: 3; transform: translateX(-180vw); }
-    .photography-left{grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    body h2 { font-size: 6vh; }
-    #photography-title { text-align: center;}
-}
-@media screen and (min-width: 769px) { /* desktop */
-    #photography-title { text-align: left;}
-    #photography-text { text-align: justify; }
-    #photography-arrow {
-        width: 6vh;
-        height: 6vh;
-        transform: translateX(2vh) translateY(0.75vh) !important;
-    }
+    #photography-arrow { stroke-width: 0.04em;}
+    #photography-title { text-align: center; font-size: 7vh;} /*or 6vh*/
+    #photography-text { text-align: center;}
 }

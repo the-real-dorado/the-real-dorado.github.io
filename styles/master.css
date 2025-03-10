@@ -1,4 +1,16 @@
-/* custom fonts */
+/* Inter */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+/* extra fonts */
 @font-face {
     font-family: 'Playfair Display';
     src: url('/styles/fonts/PlayfairDisplay-Regular.ttf');
@@ -49,48 +61,51 @@
   font-family: 'Kalam';
   src: url('/styles/fonts/Kalam-Variable.ttf');
 }
-
-
-/* auto theme */
-:root {
-  --theme-light: #fff;
-  --theme-dark: #000;
+@font-face {
+  font-family:'Bebas Neue';
+  src: url('/styles/fonts/BebasNeue-Regular.ttf');
+}
+@font-face {
+  font-family:'Anton';
+  src: url('/styles/fonts/Anton-Regular.ttf');
+}
+@font-face {
+  font-family:'Monument Extended';
+  src: url('/styles/fonts/MonumentExtended-Regular.otf');
+}
+@font-face {
+  font-family:'Monument Extended Ultrabold';
+  src: url('/styles/fonts/MonumentExtended-Ultrabold.otf');
+}
+@font-face {
+  font-family:'Melodrama';
+  src: url('/styles/fonts/Melodrama-Variable.ttf');
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--theme-light) !important;
-    color: var(--theme-dark) !important;
-    --themeColor: var(--theme-light);
-    --notThemeColor: var(--theme-dark);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--theme-dark) !important;
-    color: var(--theme-light) !important;
-    --themeColor: var(--theme-dark);
-    --notThemeColor: var(--theme-light);
-  }
-}
+::-webkit-scrollbar { display: none; }
 
 body {
-  font-family: 'Overpass', serif;
+  background-color: black !important;
+  color: white !important;
+  font-family: 'Inter', sans-serif;
+  /* font-family: 'Overpass', sans-serif; */
   justify-content: flex-start;
   align-items:center;
   text-align: center;
   /* width: 100%; */ 
-  /* ^ x-scroll issue */
+  /* ^ x-scroll issue? */
 }
 
 body p { 
+  font-family: 'Inter', sans-serif;
   font-size: 3vh;
-  font-weight: normal;
+  font-weight: 200;
+  letter-spacing: -0.03em;
 }
 
 body h2{ 
   font-size: 7vh;
-  font-weight: normal;
+  font-weight: 200;
 }
 
 /* where?? */
