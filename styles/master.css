@@ -81,8 +81,44 @@
   font-family:'Melodrama';
   src: url('/styles/fonts/Melodrama-Variable.ttf');
 }
+@font-face {
+  font-family:'Melodrama-Medium';
+  src: url('/styles/fonts/Melodrama-Medium.otf');
+}
+@font-face {
+  font-family:'Against';
+  src: url('/styles/fonts/Against-Regular.otf');
+}
+@font-face {
+  font-family:'Cfour';
+  src: url('/styles/fonts/Cfour.otf');
+}
+@font-face {
+  font-family:'Heroeau Elegant';
+  src: url('/styles/fonts/Heroeau-Elegant.otf');
+}
+@font-face {
+  font-family:'Slagless';
+  src: url('/styles/fonts/Slagless.otf');
+}
+@font-face {
+  font-family:'Gyahegi';
+  src: url('/styles/fonts/Gyahegi.otf');
+}
 
 ::-webkit-scrollbar { display: none; }
+
+/* 
+- OTF - 
+melodrama-medium
+monument
+against
+cfour
+heroeau
+slagless
+Gyahegi
+sail
+*/
 
 body {
   background-color: black !important;
@@ -92,8 +128,8 @@ body {
   justify-content: flex-start;
   align-items:center;
   text-align: center;
-  /* width: 100%; */ 
-  /* ^ x-scroll issue? */
+  /* width: 100%; */ /*x-scroll issue? */
+  /* margin: 0;*/ /* maybe? */
 }
 
 body p { 
@@ -106,6 +142,95 @@ body p {
 body h2{ 
   font-size: 7vh;
   font-weight: 200;
+}
+
+.taunts{
+  display: flex;
+  flex-direction: column;
+  align-items: end; 
+  justify-content: end;
+  text-align: end;
+  width: 90vw;
+  font-size: 18vh;
+}
+
+@media screen and (max-width: 768px) {
+  .taunts {
+    font-size: 6vh;
+  }
+}
+
+.taunts p{
+  font-size: inherit;
+  letter-spacing: -0.12em;
+  font-weight: 600; 
+}
+
+#taunts-smaller {
+  font-size: 10vh;
+}
+
+#taunts-word {
+  font-size: 12vh;
+}
+
+@media screen and (max-width: 768px) {
+  #taunts-smaller {
+    font-size: 3.5vh;
+  }
+  #taunts-word {
+    font-size: 4.5vh;
+  }
+}
+
+.back {
+  width: 100%;
+  height: 11em;
+  text-align: left;
+  justify-content: start;
+  align-items: start;
+  padding-top: 2.0em;
+  padding-bottom: 3.0em;
+  border: 2px solid transparent; /* needed idk*/
+  /* border: 2px solid blue; */
+}
+
+.fore {
+  /* transform: translateY(5em); */
+  height: 0em;
+  /* height: 5em; */
+  width: 100%;
+  border: 2px solid transparent; /* needed idk*/
+  /* border: 2px solid red;  */
+  z-index: -1;
+}
+
+#offset{
+  line-height: 1em;
+  /* transform: translateY(-1.2em); */
+  padding: 0.2em;
+}
+
+/* .hollow p{
+  letter-spacing: -0.10em;
+  color: transparent;
+  -webkit-text-stroke: 0.02em white;
+} */
+
+.hollow p{
+  letter-spacing: -0.10em;
+  /* color: rgba(255, 0, 0, 0.5); */
+  color: transparent;
+  line-height: 1em;
+  /* z-index: 0; */
+}
+
+/* .type-appear {
+  white-space: pre-wrap;
+} */
+
+.type-appear span {
+  display: inline-block;
 }
 
 /* where?? */

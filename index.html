@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="a cool website">
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    
+    <link rel="preload" href="https://rsms.me/inter/inter.css" as="style">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all';">
+
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
     <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/master.css">
@@ -44,17 +44,17 @@
   </head>
   
   
-  <header>
+  <header> <!--load faster-->
     <div class="spacer-10"></div>
     <div class="glitch-container">
       <p class="glitch-int" id="glitchElement" style="letter-spacing: normal;">
         Dorado
       </p>
     </div>
-  </header>
   <script> // glitch-inf
     setTimeout(() => document.getElementById('glitchElement').classList.replace('glitch-int', 'glitch-inf'), 4000);
   </script>
+  </header>
   
   
   <body>
@@ -93,7 +93,85 @@
     <!-- <div class="spacer-10 only-desktop"></div>
     <div class="spacer-10 only-desktop"></div> -->
     <div class="spacer-50"></div>
-
+    
+    <!-- taunts --> 
+    <div class="taunts"> <!--jerky on mobile-->
+      <div class="fore">
+        <div id="offset"><p>why design another <br> website?</p></div>
+      </div>
+      <div class="back hollow">
+        <p style="color: blue; ">
+          <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
+          stripped away<br>
+          <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
+        </p>
+        <div class="spacer-5"></div>
+        <p style="color: red;">
+          <span style="font-family: Melodrama; letter-spacing: normal; font-weight: 900;">perfection</span><br>
+          sanded away <br>
+          <span style="font-family: Against; letter-spacing: normal; font-weight: 400; line-height: 1.2em;">elegance</span>
+        </p>
+      </div>
+    </div>
+    <div class="taunts type-appear" id="taunts-smaller">
+      <p><span style="letter-spacing: -0.08em; color: white;">...to show that being</span>
+        <span style="font-family: Anton; letter-spacing: normal; font-weight: 100; color: blue;">modern</span><br>
+         <span style="letter-spacing: -0.08em; color: white;">doesn't mean losing</span>
+         <span style="font-family: Slagless; letter-spacing: normal; font-weight: 100; color: red;"
+          id="taunts-word">taste</span>
+        <span style="color: white;">.</span>
+      </p>
+    </div>
+    <script>
+      gsap.to(".fore", {
+        scrollTrigger: {
+          pin: ".fore",
+          scrub: 1,
+          trigger: ".back",
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => gsap.to(".fore", {
+            filter: "blur(0.05em)",
+            color: "rgb(255,255,255,0.2)",
+            duration: 0.5,
+            ease: "power1.inOut"
+          }),
+          onLeave: () => gsap.to(".fore", {
+            filter: "none",
+            color: "white",
+            duration: 0.5,
+            ease: "power1.inOut"
+          }),
+          onEnterBack: () => gsap.to(".fore", {
+            filter: "blur(0.05em)",
+            color: "rgb(255,255,255,0.2)",
+            duration: 0.5,
+            ease: "power1.inOut"
+          }),
+          onLeaveBack: () => gsap.to(".fore", {
+            filter: "none",
+            color: "white",
+            duration: 0.5,
+            ease: "power1.inOut"
+          })
+        }
+      });
+      gsap.fromTo(
+        "#offset",
+        {y: "-1.2em"},
+        {y: "-3.25em",
+        scrollTrigger: {
+            scrub: 1,
+            trigger: ".back",
+            start: "top center",
+            end: "bottom center",
+          }});
+    </script>
+    <!-- taunts -->
+    
+    <!-- <div class="spacer-10"></div> -->
+    <!-- <div class="spacer-10"></div> -->
+    <div class="spacer-50"></div>
 
     <!-- Photography--> <!-- preload images--> <!--add link-->
     <div class="photography-container">
@@ -200,6 +278,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script src="/scripts/lenis_scroll.js"></script>
     <script src="/scripts/drd-banner.js"></script>
+    <script src="/scripts/type-appear.js"></script>
   </body>
 
 
