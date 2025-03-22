@@ -9,6 +9,7 @@
     <meta name="description" content="a cool website">
     <link rel="preload" href="https://rsms.me/inter/inter.css" as="style">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all';">
+    <!-- preload somehow -->
 
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
     <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -43,10 +44,10 @@
     </script>
   </head>
   
-  
-  <header> <!--load faster-->
+  <!-- page loading screen -->
+  <header> 
     <div class="spacer-10"></div>
-    <div class="glitch-container">
+    <div class="glitch-container"> <!--load faster-->
       <p class="glitch-int" id="glitchElement" style="letter-spacing: normal;">
         Dorado
       </p>
@@ -174,7 +175,7 @@
     <div class="spacer-50"></div>
 
     <!-- Photography--> <!-- preload images--> <!--add link-->
-    <div class="photography-container">
+    <!-- <div class="photography-container">
       <div class="photography-left">
         <div class="photography-item photograph" id="photograph-3" style="background-color: blue;"> 
           <img src="/images/photography/film/bridge.jpg" alt="" style=" opacity: 50%;">
@@ -189,16 +190,18 @@
       <div class="photography-right">
         <div>
           <div class="spacer-5 only-mobile"></div>
-          <h2 id="photography-title"> <!--onclick="window.location.href='/pages/photography.html';"-->
-            Photography
+          <h2 id="photography-title">  -->
+            <!--onclick="window.location.href='/pages/photography.html';"-->
+            <!-- Photography
             <svg id="photography-arrow" width="1em" height="1em" viewBox="5 18 25 20"
               fill="none" stroke="currentColor" stroke-width="0.025em"
               stroke-linecap="butt" stroke-linejoin="miter"
               style="transform: translateX(0em) translateY(0.25em);">
               <line x1="6" y1="26" x2="26" y2="26"></line>
               <polyline points="18 18 26 26 18 34"></polyline>
-            </svg> <!-- desktop - css -->
-          </h2>
+            </svg>  -->
+            <!-- desktop - css -->
+          <!-- </h2>
           <p id="photography-text"><em>"Sheer ignorance — you know, there’s no confidence to equal it […]
               I thought you could do anything with a camera that the eye could do..."</em></p>
           <p id="photography-text">— Orson Welles, on his approach to cinematography <br>
@@ -206,8 +209,8 @@
           </p>  
         </div>
       </div>
-    </div>
-    <script>
+    </div> -->
+    <!-- <script>
       let mm=gsap.matchMedia();
       mm.add("(min-width: 769px)", ()=> { // desktop
         gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
@@ -223,7 +226,7 @@
         gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
         gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
         });
-    </script>
+    </script> -->
     <!-- Photography-->
     
     <div class="spacer-10"></div>
