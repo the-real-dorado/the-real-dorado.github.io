@@ -12,24 +12,24 @@
 
 .arrow.white {
     border-top-color: currentColor;
-    border-top: 4svh solid;
-    border-left: 3svh solid transparent;
-    border-right: 3svh solid transparent;
+    border-top: 4vh solid;
+    border-left: 3vh solid transparent;
+    border-right: 3vh solid transparent;
     z-index: 3;
 }
 
 .arrow.red {
     border-top-color: red;
-    border-top: 4svh solid red;
-    border-left: 3svh solid transparent;
-    border-right: 3svh solid transparent;
+    border-top: 4vh solid red;
+    border-left: 3vh solid transparent;
+    border-right: 3vh solid transparent;
     z-index: 2;
 }
 
 .arrow.blue {
     border-top-color: blue;
-    border-top: 4svh solid blue;
-    border-left: 3svh solid transparent;
-    border-right: 3svh solid transparent;
+    border-top: 4vh solid blue;
+    border-left: 3vh solid transparent;
+    border-right: 3vh solid transparent;
     z-index: 1;
 }

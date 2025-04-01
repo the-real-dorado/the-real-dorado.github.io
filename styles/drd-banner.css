@@ -1,7 +1,7 @@
 .drd-banner-row {
   display: flex;
   justify-content: left;
-  gap: 23svh;
+  gap: 23vh;
   width: 100vw;
   background-color: aliceblue;
 }
@@ -12,7 +12,7 @@
 }
 
 .drd-banner-stack p {
-  font-size: 8svh;
+  font-size: 8vh;
   letter-spacing: -0.1em;
   font-weight: 700;
   position: absolute;
@@ -21,10 +21,10 @@
 }
 
 @media screen and (max-width: 768px) { /* mobile */
-  /* .drd-banner-row{ gap: 11.5svh;}
-  .drd-banner-stack p{ font-size: 4svh;} */
-  .drd-banner-row{ gap: 17.5svh;}
-  .drd-banner-stack p{ font-size: 6svh;}
+  /* .drd-banner-row{ gap: 11.5vh;}
+  .drd-banner-stack p{ font-size: 4vh;} */
+  .drd-banner-row{ gap: 17.5vh;}
+  .drd-banner-stack p{ font-size: 6vh;}
 }
 
 /* .blu {-webkit-text-stroke: 0.04em  blue;}

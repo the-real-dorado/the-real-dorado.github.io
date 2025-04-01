@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const bannerRow = document.querySelector(".drd-banner-row");
 
     function getStacksPerRow() {
-        const stackWidth = window.innerHeight * 0.1; // Example: 15svh, adjust as needed
+        const stackWidth = window.innerHeight * 0.1; // Example: 15vh, adjust as needed
         return Math.floor(window.innerWidth / stackWidth);
     }
 

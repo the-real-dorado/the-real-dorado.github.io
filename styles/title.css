@@ -5,24 +5,24 @@
     /* update preload in HTML */
     --text-case-initial: uppercase;
     --text-case-final: capitalize;
-    --top-initial: 0svh;
-    --top-final: 0svh;
+    --top-initial: 0vh;
+    --top-final: 0vh;
     /* 0rem for mobile */
-    --font-size-intial: 15svh;
-    --font-size-final: 30svh;
+    --font-size-intial: 15vh;
+    --font-size-final: 30vh;
     --glitch-int-shadow: 5vw;
     --glitch-int-transform: 1vw;
     --glitch-inf-shadow: 0.4vw;
     --glitch-inf-transform: 1vw;
-    --line-height: 20svh;
+    --line-height: 20vh;
     --custom-position: relative;
     --custom-left: 0;
 }
 
 .glitch-container {
     position: relative;
-    width: 80svh;
-    height: 20svh;
+    width: 80vh;
+    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,8 +31,8 @@
 
 .glitch-container p{
     /* background-color: blueviolet; */
-    padding-left: 5svh;
-    padding-right: 5svh;
+    padding-left: 5vh;
+    padding-right: 5vh;
 }
 
 .glitch-int {
@@ -62,12 +62,12 @@
 
 @media screen and (max-width: 768px) {
     :root {
-        --top-initial: 0svh;
-        --top-final: 0svh;
-        --font-size-intial: 10svh;
-        --font-size-final: 20svh;
+        --top-initial: 0vh;
+        --top-final: 0vh;
+        --font-size-intial: 10vh;
+        --font-size-final: 20vh;
         --glitch-inf-shadow: 1.5vw;
-        --line-height: 20svh;
+        --line-height: 20vh;
     }
 }
 
