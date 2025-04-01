@@ -4,10 +4,10 @@
     position: relative;
     display: inline-flex;
     align-items:start;
-    gap: 0.5vh;
+    gap: 0.5rem;
     cursor: pointer;
     --underline-left: 0;
-    --underline-bottom: 2vh;
+    --underline-bottom: 2rem;
     --underline-width: 80%;
 }
 
@@ -19,7 +19,7 @@
     /* Adjusted for visibility */
     width: 0;
     /* Start with 0 width */
-    height: 0.25vh;
+    height: 0.25rem;
     background-color: currentColor;
     transition: width 0.3s ease-in-out;
 }

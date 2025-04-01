@@ -134,13 +134,13 @@ body {
 
 body p { 
   font-family: 'Inter', sans-serif;
-  font-size: 3vh;
+  font-size: 3rem;
   font-weight: 200;
   letter-spacing: -0.03em;
 }
 
 body h2{ 
-  font-size: 7vh;
+  font-size: 7rem;
   font-weight: 200;
 }
 
@@ -151,12 +151,12 @@ body h2{
   justify-content: end;
   text-align: end;
   width: 90vw;
-  font-size: 18vh;
+  font-size: 18rem;
 }
 
 @media screen and (max-width: 768px) {
   .taunts {
-    font-size: 6vh;
+    font-size: 6rem;
   }
 }
 
@@ -167,19 +167,19 @@ body h2{
 }
 
 #taunts-smaller {
-  font-size: 10vh;
+  font-size: 10rem;
 }
 
 #taunts-word {
-  font-size: 12vh;
+  font-size: 12rem;
 }
 
 @media screen and (max-width: 768px) {
   #taunts-smaller {
-    font-size: 3.5vh;
+    font-size: 3.5rem;
   }
   #taunts-word {
-    font-size: 4.5vh;
+    font-size: 4.5rem;
   }
 }
 

@@ -30,17 +30,22 @@
     <style>
       /* @media (min-width: 769px) {body {transform: scale(1.5); transform-origin: top center;} } */
       body {overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;}
-      .spacer-5 {padding-top:2.5vh!important;  padding-bottom:2.5vh!important;}
-      .spacer-10{padding-top:  5vh!important;  padding-bottom:  5vh!important;}
-      .spacer-50{padding-top:  25vh!important; padding-bottom: 25vh!important;}
+      .spacer-5 {padding-top:2.5rem!important;  padding-bottom:2.5rem!important;}
+      .spacer-10{padding-top:  5rem!important;  padding-bottom:  5rem!important;}
+      .spacer-50{padding-top:  25rem!important; padding-bottom: 25rem!important;}
       @media (min-width: 769px) {.only-mobile {display: none !important;}}
       @media (max-width: 768px) {.only-desktop {display: none !important;}}
     </style>
     <script>
+      // const isMobile = window.matchMedia("(max-width: 768px)").matches;
       window.history.scrollRestoration = "manual";
       document.addEventListener("DOMContentLoaded", function () { window.scrollTo(0, 0); });
       window.onload = function () { window.scrollTo(0, 0); };
       document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(ScrollTrigger)});
+      document.addEventListener("DOMContentLoaded", function () {
+          let init_vh = window.innerHeight * 0.01;
+          document.documentElement.style.fontSize = `${init_vh}px`;
+        });
     </script>
   </head>
   
@@ -63,13 +68,13 @@
     <!-- intro  -->
     <div>
       <p id="intro-1"
-      style="font-size: 3.5vh;">Hi</p>
+      style="font-size: 3.5rem;">Hi</p>
       <p id="intro-2"
-      style="font-size: 3.5vh;">I create what I imagine</p>
+      style="font-size: 3.5rem;">I create what I imagine</p>
     </div>
     <script>
-      gsap.from("#intro-1", { opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
-      gsap.from("#intro-2", { opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1 });
+      gsap.from("#intro-1", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out"});
+      gsap.from("#intro-2", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1 });
       </script>
     <!-- intro  -->
     
@@ -85,9 +90,9 @@
       gsap.from(".arrow.white", { opacity: 0, duration:    1, ease: "power2.out", delay: 2  });
       gsap.from(".arrow.red",   { opacity: 0, duration: 0.25, ease: "power2.out", delay: 3});
       gsap.from(".arrow.blue",  { opacity: 0, duration: 0.25, ease: "power2.out", delay: 3});
-      gsap.to  (".arrow.white", { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4  , repeat: -1});
-      gsap.to  (".arrow.red",   { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
-      gsap.to  (".arrow.blue",  { opacity: 0, y: "30vh", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
+      gsap.to  (".arrow.white", { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4  , repeat: -1});
+      gsap.to  (".arrow.red",   { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
+      gsap.to  (".arrow.blue",  { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
     </script>
     <!-- arrows -->
 
@@ -216,15 +221,15 @@
         gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
         gsap.to("#photograph-2",        {scrollTrigger:  "#photography-title" , x: " -2vw", rotation: -7, duration: 1, ease: "power2.out"});
         gsap.to("#photograph-1",        {scrollTrigger:  "#photography-title" , x: "-12vw", rotation:  5, duration: 1, ease: "power1.out"});
-        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
-        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 1});
+        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 0.5});
+        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1});
       });
       mm.add("(max-width: 768px)", ()=> { // mobile
         gsap.to("#photograph-3",        {scrollTrigger:  "#photograph-1" , x: "  2vw", rotation:  2, duration: 1, ease: "power1.out"});
         gsap.to("#photograph-2",        {scrollTrigger:  "#photograph-1" , x: "-28vw", rotation: -7, duration: 1, ease: "power1.out"});
         gsap.to("#photograph-1",        {scrollTrigger:  "#photograph-1" , x: "-58vw", rotation:  5, duration: 1, ease: "power1.out"});
-        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out"});
-        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5vh", duration: 1, ease: "power2.out", delay: 0.5});
+        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out"});
+        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 0.5});
         });
     </script> -->
     <!-- Photography-->
@@ -249,7 +254,7 @@
       </div>
     </div> -->
     <!-- <div>
-      <p style="font-size: 8vh; letter-spacing: -0.1em; font-weight: 400;" id="target-text">
+      <p style="font-size: 8rem; letter-spacing: -0.1em; font-weight: 400;" id="target-text">
         in my restless dreams <br> i see that town
       </p>
     </div>
