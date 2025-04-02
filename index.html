@@ -10,6 +10,7 @@
     <link rel="preload" href="https://rsms.me/inter/inter.css" as="style">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all';">
     <!-- preload somehow -->
+    <!-- check page width and keep within limits -->
 
     <link rel="icon" type="image/png" href="/images/DRD-3-circle-512.png">
     <link rel="preload" href="/styles/fonts/Relieve.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -17,6 +18,7 @@
 
     <link rel="stylesheet" href="/styles/title.css">
     <link rel="stylesheet" href="/styles/arrow.css">
+    <link rel="stylesheet" href="/styles/taunts.css">
     <link rel="stylesheet" href="/styles/photography.css">
     <link rel="stylesheet" href="/styles/drd-banner.css">
     <!-- <link rel="stylesheet" href="/styles/underline.css"> -->
@@ -36,16 +38,28 @@
       @media (min-width: 769px) {.only-mobile {display: none !important;}}
       @media (max-width: 768px) {.only-desktop {display: none !important;}}
     </style>
-    <script>
-      // const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    <script> // combine DOM calls
       window.history.scrollRestoration = "manual";
       document.addEventListener("DOMContentLoaded", function () { window.scrollTo(0, 0); });
       window.onload = function () { window.scrollTo(0, 0); };
+
       document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(ScrollTrigger)});
+      
+      let init_vh = window.innerHeight * 0.01; // big text flash
+      document.documentElement.style.fontSize = `${init_vh}px`;
       document.addEventListener("DOMContentLoaded", function () {
-          let init_vh = window.innerHeight * 0.01;
-          document.documentElement.style.fontSize = `${init_vh}px`;
-        });
+        let init_vh = window.innerHeight * 0.01;
+        document.documentElement.style.fontSize = `${init_vh}px`;
+      });
+
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      document.addEventListener("DOMContentLoaded", function () {
+        if (isMobile) {
+          console.log("Mobile detected - running mobile scripts");
+        } else {
+          console.log("Desktop detected - running desktop scripts");
+        }
+      });
     </script>
   </head>
   
@@ -101,11 +115,11 @@
     <div class="spacer-50"></div>
     
     <!-- taunts --> 
-    <div class="taunts"> <!--jerky on mobile-->
-      <div class="fore">
-        <div id="offset"><p>why design another <br> website?</p></div>
+    <div class="taunts only-desktop"> <!--smooth mobile-->
+      <div class="taunt-red">
+        <div id="offset"><p style="line-height: 1em; padding: 0.2em;">why design another website?</p></div>
       </div>
-      <div class="back hollow">
+      <div class="taunt-blue">
         <p style="color: blue; ">
           <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
           stripped away<br>
@@ -119,6 +133,36 @@
         </p>
       </div>
     </div>
+
+    <div class="taunts only-mobile">
+      <div class="taunt-red">
+      <!-- <div style="border: 0.5rem solid aqua; height: 80vw; transform: translateY(-40vw);"></div> -->
+        <div id="offset">
+          <p style="line-height: 1em; padding-left: 0.2em; transform: translateY(-2em);">why design another website?</p>
+        </div>
+        <div id="offset-2">
+          <div class="spacer-10"></div>
+          <div class="spacer-10"></div>
+          <p style="color: blue; ">
+            <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
+            stripped away<br>
+            <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
+          </p>
+          <div class="spacer-10"></div>
+          <div class="spacer-10"></div>
+          <p style="color: red;">
+            <span style="font-family: Melodrama; letter-spacing: normal; font-weight: 900;">perfection</span><br>
+            sanded away <br>
+            <span style="font-family: Against; letter-spacing: normal; font-weight: 400; line-height: 1.2em;">elegance</span>
+          </p>
+          <div class="spacer-10"></div>
+          <div class="spacer-10"></div>
+          </div>
+      </div>
+      <div class="taunt-blue">
+      </div>
+    </div>
+    
     <div class="taunts type-appear" id="taunts-smaller">
       <p><span style="letter-spacing: -0.08em; color: white;">...to show that being</span>
         <span style="font-family: Anton; letter-spacing: normal; font-weight: 100; color: blue;">modern</span><br>
@@ -128,33 +172,93 @@
         <span style="color: white;">.</span>
       </p>
     </div>
+
     <script>
-      gsap.to(".fore", {
+      if (isMobile){
+        gsap.to(
+          ".only-mobile .taunt-red",
+          {
+          scrollTrigger: {
+            pin: ".only-mobile .taunt-red",
+            scrub: 1,
+            trigger: ".only-mobile .taunt-blue",
+            start: "top 5%",
+            end: "bottom 85%",
+          }
+        });
+        gsap.fromTo(
+        ".only-mobile #offset",
+        { y: "-25vw" } , { y: "25vw",
+          scrollTrigger: {
+            scrub: 1,
+            trigger: ".only-mobile .taunt-blue",
+            start: "top top",
+            end: "bottom bottom",
+            onEnter: () => gsap.to(".only-mobile #offset", {
+              filter: "blur(0.05em)",
+              color: "rgb(255,255,255,0.2)",
+              duration: 0.5,
+              ease: "power1.inOut"
+            }),
+            onLeave: () => gsap.to(".only-mobile #offset", {
+              filter: "none",
+              color: "white",
+              duration: 0.5,
+              ease: "power1.inOut"
+            }),
+            onEnterBack: () => gsap.to(".only-mobile #offset", {
+              filter: "blur(0.05em)",
+              color: "rgb(255,255,255,0.2)",
+              duration: 0.5,
+              ease: "power1.inOut"
+            }),
+            onLeaveBack: () => gsap.to(".only-mobile #offset", {
+              filter: "none",
+              color: "white",
+              duration: 0.5,
+              ease: "power1.inOut"
+            })
+          }
+        });
+        gsap.fromTo(
+        ".only-mobile #offset-2",
+        { y: "-3em" } , { y: "-22em",
+          scrollTrigger: {
+            scrub: 1,
+            trigger: ".only-mobile .taunt-blue",
+            start: "top top",
+            end: "bottom bottom",
+          }
+        });
+      } else {
+      gsap.to(
+        ".only-desktop .taunt-red",
+        {
         scrollTrigger: {
-          pin: ".fore",
+          pin: ".only-desktop .taunt-red",
           scrub: 1,
-          trigger: ".back",
+          trigger: ".only-desktop .taunt-blue",
           start: "top center",
           end: "bottom center",
-          onEnter: () => gsap.to(".fore", {
+          onEnter: () => gsap.to(".only-desktop .taunt-red", {
             filter: "blur(0.05em)",
             color: "rgb(255,255,255,0.2)",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onLeave: () => gsap.to(".fore", {
+          onLeave: () => gsap.to(".only-desktop .taunt-red", {
             filter: "none",
             color: "white",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onEnterBack: () => gsap.to(".fore", {
+          onEnterBack: () => gsap.to(".only-desktop .taunt-red", {
             filter: "blur(0.05em)",
             color: "rgb(255,255,255,0.2)",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onLeaveBack: () => gsap.to(".fore", {
+          onLeaveBack: () => gsap.to(".only-desktop .taunt-red", {
             filter: "none",
             color: "white",
             duration: 0.5,
@@ -163,15 +267,16 @@
         }
       });
       gsap.fromTo(
-        "#offset",
+        ".only-desktop #offset",
         {y: "-1.2em"},
         {y: "-3.25em",
         scrollTrigger: {
             scrub: 1,
-            trigger: ".back",
+            trigger: ".only-desktop .taunt-blue",
             start: "top center",
             end: "bottom center",
           }});
+        }
     </script>
     <!-- taunts -->
     
@@ -277,10 +382,10 @@
     <div class="spacer-10"></div>
     <div style="display: flex; justify-content: flex-end; width: 90vw;"> 
       <p style="font-family: Inter; text-align: right;">
-        The site is being reimagined. <br> See you soon.
+        the site is being redesigned <br> see you soon
       </p>
     </div>
-    <div class="spacer-5 only-desktop"></div>
+    <div class="spacer-5"></div>
 
     <!-- <script src="/scripts/3D_anim.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
