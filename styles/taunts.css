@@ -26,9 +26,10 @@
     font-size: 12rem;
 }
 
-.taunt-blue { 
+.taunt-B { 
     width: 100%;
     height: 11em;
+    text-shadow: 0 0 12px black;
     text-align: left;
     justify-content: start;
     align-items: start;
@@ -38,7 +39,7 @@
     /* border: 2px solid blue; */
 }
 
-.taunt-red {
+.taunt-A {
     /* transform: translateY(5em); */
     height: 0em;
     /* height: 5em; */
@@ -78,7 +79,7 @@ white-space: pre-wrap;
         line-height: 1em;
     }
 
-    .taunt-blue {
+    .taunt-B { /* no effect cause separate*/
         width: 100%;
         height: 20em;
         text-align: left;
@@ -92,7 +93,7 @@ white-space: pre-wrap;
         border-bottom: 0.5rem solid red; */
     }
     
-    .taunt-red {
+    .taunt-A {
         /* transform: translateY(5em); */
         transform: rotate(-90deg) translateX(-50%);
         align-items: center;

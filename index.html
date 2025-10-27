@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" style="overflow-x: hidden;">
+
+
+<html lang="en" dir="ltr" style="overflow-x: hidden;" class="noscroll">
   
 
   <head>
@@ -47,6 +49,7 @@
       
       let init_vh = window.innerHeight * 0.01; // big text flash
       document.documentElement.style.fontSize = `${init_vh}px`;
+      // only mobile - reload page on desktop when resized like exat
       document.addEventListener("DOMContentLoaded", function () {
         let init_vh = window.innerHeight * 0.01;
         document.documentElement.style.fontSize = `${init_vh}px`;
@@ -60,6 +63,35 @@
           console.log("Desktop detected - running desktop scripts");
         }
       });
+
+      function preventDefault(e) { e.preventDefault(); }
+        function preventScrollKeys(e) {
+          const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+          if (keys.includes(e.keyCode)) e.preventDefault();
+        }
+      window.addEventListener('load', () => {
+        window.addEventListener('wheel', preventDefault, { passive: false });
+        window.addEventListener('touchmove', preventDefault, { passive: false });
+        window.addEventListener('keydown', preventScrollKeys, { passive: false });
+      });
+      setTimeout(() => {
+        // const rect = document.querySelector("#intro-3").getBoundingClientRect();
+        // const el = document.querySelector("#intro-3");
+        // el.style.position = "fixed";
+        // el.style.top = rect.top + "px";
+        // el.style.left = rect.left + "px";
+        // el.style.margin = 0;
+        // el.style.transform = "none";
+        const elem = document.querySelector('.noscroll');
+        if (elem) { elem.classList.remove('noscroll'); }
+        const lenisScript = document.createElement('script');
+        lenisScript.src = "/scripts/lenis_scroll.js";
+        document.body.appendChild(lenisScript);
+        window.removeEventListener('wheel', preventDefault);
+        window.removeEventListener('touchmove', preventDefault);
+        window.removeEventListener('keydown', preventScrollKeys);
+        }, 4000);
+
     </script>
   </head>
   
@@ -79,22 +111,32 @@
   
   <body>
     
-    <!-- intro  -->
+    <!-- #region intro  -->
     <div>
       <p id="intro-1"
       style="font-size: 3.5rem;">Hi</p>
-      <p id="intro-2"
-      style="font-size: 3.5rem;">I create what I imagine</p>
+      <div class="intro-container">
+        <p id="intro-2"
+        style="font-size: 3.5rem; color: white;">I create <span style="color: transparent;">what</span> I imagine</p>
+        <p id="intro-3"
+        style="font-size: 3.5rem; color: transparent;">I create <span style="color: white;">what</span> I imagine</p>
+      </div>
     </div>
+    <style>
+      .intro-container {position: relative}
+      #intro-2 {position: relative}
+      #intro-3 {position: absolute; top: -1em; left: 0;}
+    </style>
     <script>
       gsap.from("#intro-1", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out"});
       gsap.from("#intro-2", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1 });
-      </script>
-    <!-- intro  -->
+      gsap.from("#intro-3", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1});
+    </script>
+    <!-- #endregion intro  -->
     
     <div class="spacer-10"></div>
     
-    <!-- arrows -->
+    <!-- #region arrows -->
     <div class="arrow-container">
       <div class="arrow white"></div>
       <div class="arrow red"></div>
@@ -108,19 +150,20 @@
       gsap.to  (".arrow.red",   { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
       gsap.to  (".arrow.blue",  { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
     </script>
-    <!-- arrows -->
+    <!-- #endregion arrows -->
 
     <!-- <div class="spacer-10 only-desktop"></div>
     <div class="spacer-10 only-desktop"></div> -->
     <div class="spacer-50"></div>
     
-    <!-- taunts --> 
-    <div class="taunts only-desktop"> <!--smooth mobile-->
-      <div class="taunt-red">
+    <!-- #region taunts --> 
+    <!--smooth scroll mobile-->
+    <div class="taunts only-desktop">
+      <div class="taunt-A">
         <div id="offset"><p style="line-height: 1em; padding: 0.2em;">why design another website?</p></div>
       </div>
-      <div class="taunt-blue">
-        <p style="color: blue; ">
+      <div class="taunt-B">
+        <p style="color: blue;">
           <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
           stripped away<br>
           <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
@@ -135,7 +178,7 @@
     </div>
 
     <div class="taunts only-mobile">
-      <div class="taunt-red">
+      <div class="taunt-A">
       <!-- <div style="border: 0.5rem solid aqua; height: 80vw; transform: translateY(-40vw);"></div> -->
         <div id="offset">
           <p style="line-height: 1em; padding-left: 0.2em; transform: translateY(-2em);">why design another website?</p>
@@ -143,14 +186,14 @@
         <div id="offset-2">
           <div class="spacer-10"></div>
           <div class="spacer-10"></div>
-          <p style="color: blue; ">
+          <p style="color: blue; text-shadow: 0 0 12px black;">
             <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
             stripped away<br>
             <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
           </p>
           <div class="spacer-10"></div>
           <div class="spacer-10"></div>
-          <p style="color: red;">
+          <p style="color: red; text-shadow: 0 0 12px black;">
             <span style="font-family: Melodrama; letter-spacing: normal; font-weight: 900;">perfection</span><br>
             sanded away <br>
             <span style="font-family: Against; letter-spacing: normal; font-weight: 400; line-height: 1.2em;">elegance</span>
@@ -159,7 +202,8 @@
           <div class="spacer-10"></div>
           </div>
       </div>
-      <div class="taunt-blue">
+      <div class="taunt-B"> 
+        <!-- weird movement thus separate -->
       </div>
     </div>
     
@@ -176,12 +220,12 @@
     <script>
       if (isMobile){
         gsap.to(
-          ".only-mobile .taunt-red",
+          ".only-mobile .taunt-A",
           {
           scrollTrigger: {
-            pin: ".only-mobile .taunt-red",
+            pin: ".only-mobile .taunt-A",
             scrub: 1,
-            trigger: ".only-mobile .taunt-blue",
+            trigger: ".only-mobile .taunt-B",
             start: "top 5%",
             end: "bottom 85%",
           }
@@ -191,7 +235,7 @@
         { y: "-25vw" } , { y: "25vw",
           scrollTrigger: {
             scrub: 1,
-            trigger: ".only-mobile .taunt-blue",
+            trigger: ".only-mobile .taunt-B",
             start: "top top",
             end: "bottom bottom",
             onEnter: () => gsap.to(".only-mobile #offset", {
@@ -225,40 +269,40 @@
         { y: "-3em" } , { y: "-22em",
           scrollTrigger: {
             scrub: 1,
-            trigger: ".only-mobile .taunt-blue",
+            trigger: ".only-mobile .taunt-B",
             start: "top top",
             end: "bottom bottom",
           }
         });
       } else {
       gsap.to(
-        ".only-desktop .taunt-red",
+        ".only-desktop .taunt-A",
         {
         scrollTrigger: {
-          pin: ".only-desktop .taunt-red",
+          pin: ".only-desktop .taunt-A",
           scrub: 1,
-          trigger: ".only-desktop .taunt-blue",
+          trigger: ".only-desktop .taunt-B",
           start: "top center",
           end: "bottom center",
-          onEnter: () => gsap.to(".only-desktop .taunt-red", {
+          onEnter: () => gsap.to(".only-desktop .taunt-A", {
             filter: "blur(0.05em)",
             color: "rgb(255,255,255,0.2)",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onLeave: () => gsap.to(".only-desktop .taunt-red", {
+          onLeave: () => gsap.to(".only-desktop .taunt-A", {
             filter: "none",
             color: "white",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onEnterBack: () => gsap.to(".only-desktop .taunt-red", {
+          onEnterBack: () => gsap.to(".only-desktop .taunt-A", {
             filter: "blur(0.05em)",
             color: "rgb(255,255,255,0.2)",
             duration: 0.5,
             ease: "power1.inOut"
           }),
-          onLeaveBack: () => gsap.to(".only-desktop .taunt-red", {
+          onLeaveBack: () => gsap.to(".only-desktop .taunt-A", {
             filter: "none",
             color: "white",
             duration: 0.5,
@@ -272,110 +316,67 @@
         {y: "-3.25em",
         scrollTrigger: {
             scrub: 1,
-            trigger: ".only-desktop .taunt-blue",
+            trigger: ".only-desktop .taunt-B",
             start: "top center",
             end: "bottom center",
           }});
         }
     </script>
-    <!-- taunts -->
+    <!-- #endregion taunts -->
     
     <!-- <div class="spacer-10"></div> -->
     <!-- <div class="spacer-10"></div> -->
     <div class="spacer-50"></div>
 
-    <!-- Photography--> <!-- preload images--> <!--add link-->
-    <!-- <div class="photography-container">
-      <div class="photography-left">
-        <div class="photography-item photograph" id="photograph-3" style="background-color: blue;"> 
-          <img src="/images/photography/film/bridge.jpg" alt="" style=" opacity: 50%;">
-        </div>
-        <div class="photography-item photograph" id="photograph-2" style="background-color: red;"> 
-          <img src="/images/photography/film/fence.jpg" alt="" style=" opacity: 50%">
-        </div>
-        <div class="photography-item photograph" id="photograph-1" style="background-color: white;"> 
-          <img src="/images/photography/film/basketball.jpg" alt="">
-        </div>
-      </div>
-      <div class="photography-right">
-        <div>
-          <div class="spacer-5 only-mobile"></div>
-          <h2 id="photography-title">  -->
-            <!--onclick="window.location.href='/pages/photography.html';"-->
-            <!-- Photography
-            <svg id="photography-arrow" width="1em" height="1em" viewBox="5 18 25 20"
-              fill="none" stroke="currentColor" stroke-width="0.025em"
-              stroke-linecap="butt" stroke-linejoin="miter"
-              style="transform: translateX(0em) translateY(0.25em);">
-              <line x1="6" y1="26" x2="26" y2="26"></line>
-              <polyline points="18 18 26 26 18 34"></polyline>
-            </svg>  -->
-            <!-- desktop - css -->
-          <!-- </h2>
-          <p id="photography-text"><em>"Sheer ignorance — you know, there’s no confidence to equal it […]
-              I thought you could do anything with a camera that the eye could do..."</em></p>
-          <p id="photography-text">— Orson Welles, on his approach to cinematography <br>
-            <em>(BBC Interview, 1960)</em>
-          </p>  
-        </div>
-      </div>
-    </div> -->
-    <!-- <script>
-      let mm=gsap.matchMedia();
-      mm.add("(min-width: 769px)", ()=> { // desktop
-        gsap.to("#photograph-3",        {scrollTrigger:  "#photography-title" , x: "  5vw", rotation:  2, duration: 1, ease: "power3.out"});
-        gsap.to("#photograph-2",        {scrollTrigger:  "#photography-title" , x: " -2vw", rotation: -7, duration: 1, ease: "power2.out"});
-        gsap.to("#photograph-1",        {scrollTrigger:  "#photography-title" , x: "-12vw", rotation:  5, duration: 1, ease: "power1.out"});
-        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 0.5});
-        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1});
-      });
-      mm.add("(max-width: 768px)", ()=> { // mobile
-        gsap.to("#photograph-3",        {scrollTrigger:  "#photograph-1" , x: "  2vw", rotation:  2, duration: 1, ease: "power1.out"});
-        gsap.to("#photograph-2",        {scrollTrigger:  "#photograph-1" , x: "-28vw", rotation: -7, duration: 1, ease: "power1.out"});
-        gsap.to("#photograph-1",        {scrollTrigger:  "#photograph-1" , x: "-58vw", rotation:  5, duration: 1, ease: "power1.out"});
-        gsap.from("#photography-title", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out"});
-        gsap.from("#photography-text ", { scrollTrigger: "#photography-title" , opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 0.5});
-        });
-    </script> -->
-    <!-- Photography-->
+    <!-- #region Art -->
+
+    <!-- #endregion Art -->
+     
+
+    <!-- #region Photography--> 
+    <!-- #endregion Photography-->
     
     <div class="spacer-10"></div>
     <div class="spacer-10"></div>
     
-    <!-- 3D & Game Design -->
-    <!-- <div class="scroll-container">
-      <div class="scroll-item">
-        <div class="scroll-content" style="left: 50vw;"> -->
-          <!-- once per load -->
-           <!-- <div class="video-wrapper scroll-item">
-             <video id="video-WF" class="scroll-item scroll-video" muted playsinline preload="auto" poster="/test/WF-poster.webp">
-               <source src="/test/WF.webm" type="video/webm"> can't play video :/ </video> -->
-             <!-- <div class="scanlines scroll-item"></div> -->
-           <!-- </div>
-          <video id="video-RD" class="scroll-item scroll-video" muted playsinline preload="auto">
-            <source src="/test/RD.webm" type="video/webm"> can't play video :/ </video> -->
-          <!-- play loop video -->
-        <!-- </div>
+    <!-- #region 3D & Game Design -->
+    <!-- #endregion  -->
+    
+    <!-- #region fun -->
+    <!-- <div style="position: relative; line-height: 0.5rem;">
+      <div style="position: absolute; width: 75rem; height: 25rem; transform: translateX(-50%) translateY(35%); background-color: hsl(240, 100%, 10%); z-index: 0;"></div>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top:-2.0rem; left:-2.0rem; color: hsl(0, 100%, 10%);">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top:-1.0rem; left:-1.0rem; color: hsl(0, 100%, 20%) ;">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top: 1.0rem; left: 1.0rem; color: hsl(0, 100%, 30%)  ;">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top: 2.0rem; left: 2.0rem; color: hsl(0, 100%, 40%)   ;">dorado</p>
+    </div>
+    <div class="spacer-50"></div>
+    <div style="position: relative; line-height: 0.5rem;">
+      <div style="position: absolute; width: 75rem; height: 25rem; transform: translateX(-50%) translateY(35%); background-color: white; z-index: 0;"></div>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top:-2.0rem; left:-2.0rem; color: red;">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top:-1.0rem; left:-1.0rem; color: blue ;">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top: 1.0rem; left: 1.0rem; color: green  ;">dorado</p>
+      <p style="transform: translateX(-50%); position: absolute; font-size: 20rem; font-weight: 600; top: 2.0rem; left: 2.0rem; color: gold   ;">dorado</p>
+    </div>
+    <div class="spacer-50"></div> -->
+    <!-- #endregion -->
+    
+    <div class="spacer-5"></div>
+    
+    <!-- #region footer -->
+    <div class="spacer-10"></div>
+    <div class="drd-banner-row" style="transform: rotate(-7deg);">
+      <div class="drd-banner-stack">
+        <p class="top blu">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
+        <p class="mid red">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
+        <p class="bot wht">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
       </div>
-    </div> -->
-    <!-- <div>
-      <p style="font-size: 8rem; letter-spacing: -0.1em; font-weight: 400;" id="target-text">
-        in my restless dreams <br> i see that town
-      </p>
     </div>
     <script>
-      let target = document.getElementById("target-text");
-      target.innerHTML = target.innerHTML.replace(/e/g, '<span class="rotated">e</span>');
+      const banner = document.querySelector(".drd-banner-stack");
+      const bannerWidth = banner.scrollWidth/2;
+      gsap.to(banner, {x: -bannerWidth, ease: "none", duration: 60, repeat: -1,});
     </script>
-    <style>
-      .rotated {
-        display: inline-block; /* Allows rotation */
-        transform: rotate(-7deg); /* Adjust angle as needed */
-    }
-    </style> -->
-    
-    <div class="spacer-10"></div>
-    <div class="drd-banner-row" style="transform: rotate(-7deg);"></div>
     <div class="spacer-10"></div>
 
     <!-- <div class="spacer-50"></div> -->
@@ -386,11 +387,11 @@
       </p>
     </div>
     <div class="spacer-5"></div>
+    <!-- #endregion footer -->
 
     <!-- <script src="/scripts/3D_anim.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
-    <script src="/scripts/lenis_scroll.js"></script>
-    <script src="/scripts/drd-banner.js"></script>
+    <!-- <script src="/scripts/lenis_scroll.js"></script> -->
     <script src="/scripts/type-appear.js"></script>
   </body>
 

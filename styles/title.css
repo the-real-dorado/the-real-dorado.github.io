@@ -2,6 +2,7 @@
 :root {
     --initial-font: 'Overpass', sans-serif;
     --final-font: 'Relieve';
+    --final-font-weight: 400; /* 600 in logo*/ 
     /* update preload in HTML */
     --text-case-initial: uppercase;
     --text-case-final: capitalize;
@@ -50,6 +51,7 @@
 
 .glitch-inf {
     font-family: var(--final-font);
+    font-weight: var(--final-font-weight);
     text-transform: var(--text-case-final);
     font-size: var(--font-size-final);
     line-height: var(--line-height);
@@ -89,6 +91,7 @@
         text-shadow: var(--glitch-int-shadow) 0 blue, calc(-1*var(--glitch-int-shadow)) 0 red;
         transform: translateX(var(--glitch-int-transform));
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         top: var(--top-final);
         font-size: var(--font-size-final);
@@ -113,6 +116,8 @@
         text-shadow: calc(-1*var(--glitch-int-shadow)) 0 blue, var(--glitch-int-shadow) 0 red;
         transform: translateX(calc(-1*var(--glitch-int-transform)));
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         top: var(--top-final);
         font-size: var(--font-size-final);
@@ -125,6 +130,7 @@
         text-shadow: none;
         transform: translateX(0vw);
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         top: var(--top-final);
         font-size: var(--font-size-final);
@@ -141,6 +147,7 @@
         text-shadow: var(--glitch-inf-shadow) 0 red, calc(-1*var(--glitch-inf-shadow)) 0 blue;
         transform: translateX(0vw);
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         font-size: var(--font-size-final);
         top: var(--top-final);
@@ -153,6 +160,7 @@
         text-shadow: calc(-1*var(--glitch-inf-shadow)) 0 red, var(--glitch-inf-shadow) 0 blue;
         transform: translateX(calc(-1*var(--glitch-inf-transform)));
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         font-size: var(--font-size-final);
         top: var(--top-final);
@@ -165,6 +173,7 @@
         text-shadow: var(--glitch-inf-shadow) 0 blue, calc(-1*var(--glitch-inf-shadow)) 0 red;
         transform: translateX(var(--glitch-inf-transform));
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         font-size: var(--font-size-final);
         top: var(--top-final);
@@ -177,6 +186,7 @@
         text-shadow: calc(-1*var(--glitch-inf-shadow)) 0 blue, var(--glitch-inf-shadow) 0 red;
         transform: translateX(0vw);
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         font-size: var(--font-size-final);
         top: var(--top-final);
@@ -189,6 +199,7 @@
         text-shadow: none;
         transform: translateX(0vw);
         font-family: var(--final-font);
+        font-weight: var(--final-font-weight);
         text-transform: var(--text-case-final);
         font-size: var(--font-size-final);
         top: var(--top-final);
