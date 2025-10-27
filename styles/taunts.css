@@ -12,7 +12,7 @@
 
 .taunts p {
     font-size: inherit;
-    letter-spacing: -0.12em;
+    letter-spacing: -0.12em; /* why twice?*/
     font-weight: 600;
     letter-spacing: -0.10em;
     line-height: 1em;
@@ -73,7 +73,7 @@ white-space: pre-wrap;
     
     .taunts p {
         font-size: inherit;
-        letter-spacing: -0.12em;
+        letter-spacing: -0.12em; /* why twice?*/
         font-weight: 600;
         letter-spacing: -0.10em;
         line-height: 1em;

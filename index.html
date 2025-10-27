@@ -132,11 +132,9 @@
       gsap.from("#intro-2", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1 });
       gsap.from("#intro-3", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1});
     </script>
-    <!-- #endregion intro  -->
     
     <div class="spacer-10"></div>
     
-    <!-- #region arrows -->
     <div class="arrow-container">
       <div class="arrow white"></div>
       <div class="arrow red"></div>
@@ -150,183 +148,63 @@
       gsap.to  (".arrow.red",   { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.2, repeat: -1 });
       gsap.to  (".arrow.blue",  { opacity: 0, y: "30rem", ease: "power2.out", duration: 1.6, delay: 4.4, repeat: -1 });
     </script>
-    <!-- #endregion arrows -->
+    <!-- #endregion intro  -->
 
     <!-- <div class="spacer-10 only-desktop"></div>
     <div class="spacer-10 only-desktop"></div> -->
     <div class="spacer-50"></div>
     
-    <!-- #region taunts --> 
-    <!--smooth scroll mobile-->
-    <div class="taunts only-desktop">
-      <div class="taunt-A">
-        <div id="offset"><p style="line-height: 1em; padding: 0.2em;">why design another website?</p></div>
-      </div>
-      <div class="taunt-B">
-        <p style="color: blue;">
-          <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
-          stripped away<br>
-          <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
-        </p>
-        <div class="spacer-5"></div>
-        <p style="color: red;">
-          <span style="font-family: Melodrama; letter-spacing: normal; font-weight: 900;">perfection</span><br>
-          sanded away <br>
-          <span style="font-family: Against; letter-spacing: normal; font-weight: 400; line-height: 1.2em;">elegance</span>
-        </p>
-      </div>
-    </div>
+    <!-- #region statement -->
 
-    <div class="taunts only-mobile">
-      <div class="taunt-A">
-      <!-- <div style="border: 0.5rem solid aqua; height: 80vw; transform: translateY(-40vw);"></div> -->
-        <div id="offset">
-          <p style="line-height: 1em; padding-left: 0.2em; transform: translateY(-2em);">why design another website?</p>
-        </div>
-        <div id="offset-2">
-          <div class="spacer-10"></div>
-          <div class="spacer-10"></div>
-          <p style="color: blue; text-shadow: 0 0 12px black;">
-            <span style="font-family: Monument Extended; letter-spacing: -0.05em; font-weight: 100;line-height: 1em;">minimalism</span><br>
-            stripped away<br>
-            <span style="font-family: Heroeau Elegant; letter-spacing: normal; font-weight: 400; line-height: 1.8em;">character</span>
-          </p>
-          <div class="spacer-10"></div>
-          <div class="spacer-10"></div>
-          <p style="color: red; text-shadow: 0 0 12px black;">
-            <span style="font-family: Melodrama; letter-spacing: normal; font-weight: 900;">perfection</span><br>
-            sanded away <br>
-            <span style="font-family: Against; letter-spacing: normal; font-weight: 400; line-height: 1.2em;">elegance</span>
-          </p>
-          <div class="spacer-10"></div>
-          <div class="spacer-10"></div>
-          </div>
-      </div>
-      <div class="taunt-B"> 
-        <!-- weird movement thus separate -->
-      </div>
+    <div id="statement">
+      <p class="type-appear">this is <span style="color: red;">not</span> a portfolio</p>
+      <p class="type-appear">it is <span style="color: blue;">proof</span> of what inspiration <br> and observation can lead to</p>
+      <p class="type-appear">every piece here is a record <br> of an experiment in <span style="color: red;">looking</span></p>
+      <p class="type-appear">art is born from <span style="color: blue;">obsession</span><br> not bestowed by talent</p>
+      <!-- <p>i wanted to create a place that speaks of me - and lets me speak</p> -->
     </div>
+    <style>
+      #statement {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          justify-content: end;
+          text-align: end;
+          width: 90vw;
+          font-size: 12rem;
+        }
+      #statement p {
+        font-size: inherit;
+        font-weight: 600;
+        letter-spacing: -0.08em;
+        line-height: 1em;
+      }
+      @media screen and (max-width: 768px) {
+        #statement {
+          font-size: 4rem;
+        }
+      }
+      /* .statement-e {
+        display: inline-block;
+        transform: rotate(-10deg);
+      } */
+    </style>
+    <!-- <script>
+      let target = document.getElementById("statement");
+      target.innerHTML = target.innerHTML.replace(/e/g, '<span class="statement-e">e</span>');
+    </script> -->
+
+    <!-- #endregion statement -->
     
-    <div class="taunts type-appear" id="taunts-smaller">
-      <p><span style="letter-spacing: -0.08em; color: white;">...to show that being</span>
-        <span style="font-family: Anton; letter-spacing: normal; font-weight: 100; color: blue;">modern</span><br>
-         <span style="letter-spacing: -0.08em; color: white;">doesn't mean losing</span>
-         <span style="font-family: Slagless; letter-spacing: normal; font-weight: 100; color: red;"
-          id="taunts-word">taste</span>
-        <span style="color: white;">.</span>
-      </p>
-    </div>
+    <div class="spacer-50"></div>
+    
+    <!-- #region taunts --> 
 
-    <script>
-      if (isMobile){
-        gsap.to(
-          ".only-mobile .taunt-A",
-          {
-          scrollTrigger: {
-            pin: ".only-mobile .taunt-A",
-            scrub: 1,
-            trigger: ".only-mobile .taunt-B",
-            start: "top 5%",
-            end: "bottom 85%",
-          }
-        });
-        gsap.fromTo(
-        ".only-mobile #offset",
-        { y: "-25vw" } , { y: "25vw",
-          scrollTrigger: {
-            scrub: 1,
-            trigger: ".only-mobile .taunt-B",
-            start: "top top",
-            end: "bottom bottom",
-            onEnter: () => gsap.to(".only-mobile #offset", {
-              filter: "blur(0.05em)",
-              color: "rgb(255,255,255,0.2)",
-              duration: 0.5,
-              ease: "power1.inOut"
-            }),
-            onLeave: () => gsap.to(".only-mobile #offset", {
-              filter: "none",
-              color: "white",
-              duration: 0.5,
-              ease: "power1.inOut"
-            }),
-            onEnterBack: () => gsap.to(".only-mobile #offset", {
-              filter: "blur(0.05em)",
-              color: "rgb(255,255,255,0.2)",
-              duration: 0.5,
-              ease: "power1.inOut"
-            }),
-            onLeaveBack: () => gsap.to(".only-mobile #offset", {
-              filter: "none",
-              color: "white",
-              duration: 0.5,
-              ease: "power1.inOut"
-            })
-          }
-        });
-        gsap.fromTo(
-        ".only-mobile #offset-2",
-        { y: "-3em" } , { y: "-22em",
-          scrollTrigger: {
-            scrub: 1,
-            trigger: ".only-mobile .taunt-B",
-            start: "top top",
-            end: "bottom bottom",
-          }
-        });
-      } else {
-      gsap.to(
-        ".only-desktop .taunt-A",
-        {
-        scrollTrigger: {
-          pin: ".only-desktop .taunt-A",
-          scrub: 1,
-          trigger: ".only-desktop .taunt-B",
-          start: "top center",
-          end: "bottom center",
-          onEnter: () => gsap.to(".only-desktop .taunt-A", {
-            filter: "blur(0.05em)",
-            color: "rgb(255,255,255,0.2)",
-            duration: 0.5,
-            ease: "power1.inOut"
-          }),
-          onLeave: () => gsap.to(".only-desktop .taunt-A", {
-            filter: "none",
-            color: "white",
-            duration: 0.5,
-            ease: "power1.inOut"
-          }),
-          onEnterBack: () => gsap.to(".only-desktop .taunt-A", {
-            filter: "blur(0.05em)",
-            color: "rgb(255,255,255,0.2)",
-            duration: 0.5,
-            ease: "power1.inOut"
-          }),
-          onLeaveBack: () => gsap.to(".only-desktop .taunt-A", {
-            filter: "none",
-            color: "white",
-            duration: 0.5,
-            ease: "power1.inOut"
-          })
-        }
-      });
-      gsap.fromTo(
-        ".only-desktop #offset",
-        {y: "-1.2em"},
-        {y: "-3.25em",
-        scrollTrigger: {
-            scrub: 1,
-            trigger: ".only-desktop .taunt-B",
-            start: "top center",
-            end: "bottom center",
-          }});
-        }
-    </script>
     <!-- #endregion taunts -->
     
     <!-- <div class="spacer-10"></div> -->
     <!-- <div class="spacer-10"></div> -->
-    <div class="spacer-50"></div>
+    <!-- <div class="spacer-50"></div> -->
 
     <!-- #region Art -->
 
@@ -334,12 +212,14 @@
      
 
     <!-- #region Photography--> 
+
     <!-- #endregion Photography-->
     
-    <div class="spacer-10"></div>
-    <div class="spacer-10"></div>
+    <!-- <div class="spacer-10"></div> -->
+    <!-- <div class="spacer-10"></div> -->
     
     <!-- #region 3D & Game Design -->
+
     <!-- #endregion  -->
     
     <!-- #region fun -->
