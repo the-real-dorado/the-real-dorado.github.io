@@ -99,7 +99,7 @@
   <header> 
     <div class="spacer-10"></div>
     <div class="glitch-container"> <!--load faster-->
-      <p class="glitch-int" id="glitchElement" style="letter-spacing: normal;">
+      <p class="glitch-int" id="glitchElement" style="letter-spacing: normal; font-weight: 200;">
         Dorado
       </p>
     </div>
@@ -112,25 +112,22 @@
   <body>
     
     <!-- #region intro  -->
-    <div>
+    <div class="intro-font">
       <p id="intro-1"
       style="font-size: 3.5rem;">Hi</p>
       <div class="intro-container">
         <p id="intro-2"
-        style="font-size: 3.5rem; color: white;">I create <span style="color: transparent;">what</span> I imagine</p>
-        <p id="intro-3"
-        style="font-size: 3.5rem; color: transparent;">I create <span style="color: white;">what</span> I imagine</p>
+        style="font-size: 3.5rem;">I create what I imagine</p>
       </div>
     </div>
     <style>
       .intro-container {position: relative}
       #intro-2 {position: relative}
-      #intro-3 {position: absolute; top: -1em; left: 0;}
+      
     </style>
     <script>
       gsap.from("#intro-1", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out"});
       gsap.from("#intro-2", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1 });
-      gsap.from("#intro-3", { opacity: 0, y: "5rem", duration: 1, ease: "power2.out", delay: 1});
     </script>
     
     <div class="spacer-10"></div>
@@ -150,8 +147,6 @@
     </script>
     <!-- #endregion intro  -->
 
-    <!-- <div class="spacer-10 only-desktop"></div>
-    <div class="spacer-10 only-desktop"></div> -->
     <div class="spacer-50"></div>
     
     <!-- #region statement -->
@@ -171,56 +166,188 @@
           justify-content: end;
           text-align: end;
           width: 90vw;
-          font-size: 12rem;
+          font-size: 7vw;
         }
-      #statement p {
-        font-size: inherit;
-        font-weight: 600;
-        letter-spacing: -0.08em;
-        line-height: 1em;
-      }
-      @media screen and (max-width: 768px) {
-        #statement {
-          font-size: 4rem;
-        }
-      }
-      /* .statement-e {
-        display: inline-block;
-        transform: rotate(-10deg);
-      } */
     </style>
-    <!-- <script>
-      let target = document.getElementById("statement");
-      target.innerHTML = target.innerHTML.replace(/e/g, '<span class="statement-e">e</span>');
-    </script> -->
 
     <!-- #endregion statement -->
     
+    <!-- <div class="drd-banner-row">
+      <div class="drd-banner-stack">
+        <p class="top blu-h">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
+        <p class="mid red-h">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
+        <p class="bot wht-h">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
+      </div>
+    </div> -->
+
     <div class="spacer-50"></div>
+    <div class=" only-mobile spacer-10"></div>
+    <!-- <div class=" only-mobile spacer-10"></div> -->
     
+    <!-- #region Painting -->
+    <div class="painting">
+      <p id="painting-title" class="scroll-reveal">PAINTING</p>
+      <div>
+        <p id="painting-subtitle"></span>what it means to <span style="color: blue;">look</span> at something</p>
+      </div>
+    </div>
+
+    
+    <div class="spacer-10 only-mobile"></div>
+    <div class="spacer-10 only-mobile"></div>
+    <div class="spacer-5 only-mobile"></div>
+    
+    <p id="painting-fw-title-mobile" class="only-mobile">Feature Works <span style="display:inline-block; transform:rotate(90deg);">→</span></p>
+    <div id="painting-fw-scroll">
+      <div id="painting-fw-container">
+        <div id="painting-fw-images">
+          <p id="painting-fw-title-desktop" class="only-desktop">Feature Works <span style="display:inline-block; transform:rotate(90deg);">→</span></p>
+          <img src="images/paintings/girl_from_the_art_museum.jpg" alt="Girl from the Art Museum">
+          <img src="images/paintings/girl_in_the_maroon_dress.jpg" alt="Girl in the Maroon Dress">
+          <img src="images/paintings/vices.jpg" alt="Vices">
+        </div>
+      </div>
+    </div>
+    <style>
+      .painting {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 90vw;
+        height: 90rem;
+        gap: 0;
+      }
+      #painting-title {
+        border-top: 0.024em solid red;
+        color: red;
+        font-size: 20vw;
+        margin: 0;
+      }
+      #painting-subtitle {
+        font-size: 4vw;
+        margin: 0;
+      }
+      #painting-fw-title-desktop {
+        /* border: 1px solid gold; */
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        font-size: 6vw;
+        margin-right: 0vw;
+        margin-left: 0vw;
+      }
+      #painting-fw-scroll {
+        /* border: 1px solid red; */
+        width: 90vw;
+        height: 200rem;
+      }
+      #painting-fw-container {
+        /* border: 1px solid aqua; */
+        height: 90rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      #painting-fw-images {
+        /* border: 1px solid gold; */
+        display: flex;
+        flex-direction: row;
+        gap: 2.5vw;
+      }
+      #painting-fw-images img {
+        height: 90rem;
+        width: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 1px solid red;
+      }
+
+      @media screen and (max-width: 768px) {
+        .painting{
+          height: 90vw;
+          width: 90rem;
+          transform: rotate(-90deg);
+          justify-content: start;
+          text-align: left;
+        }
+        #painting-title{
+          font-size: 20rem;
+        }
+        #painting-subtitle{
+          font-size: 4rem;
+          margin-left: 2rem;
+        }
+        
+        #painting-fw-title-mobile {
+          font-size: 12vw;
+          margin-right: 2vw;
+          margin-left: 3vw;
+        }
+        #painting-fw-scroll {
+          /* border: 1px solid red; */
+          width: 90vw;
+          /* height: 200rem; */
+        }
+        #painting-fw-container {
+          /* border: 1px solid aqua; */
+          height: 90rem;
+          display: flex;
+          flex-direction: row;
+          align-items: start;
+        }
+        #painting-fw-images {
+          /* border: 1px solid gold; */
+          display: flex;
+          flex-direction: column;
+          gap: 5vw;
+        }
+        #painting-fw-images img {
+          height: auto;
+          width: 90vw;
+          border-radius: 8px;
+          object-fit: cover;
+          border: 1px solid red;
+        }
+      }
+    </style>
+    <script>
+      const scroll = document.querySelector("#painting-fw-scroll");
+      const container = document.querySelector("#painting-fw-container");
+      const images = document.querySelector("#painting-fw-images");
+      
+      if (!isMobile){
+        gsap.to(images, {
+          x: () => -(images.scrollWidth - window.innerWidth*0.9) + "px",
+          ease: "none",
+          scrollTrigger: {
+            trigger: scroll,
+            start: "top 5%",
+            end: "bottom 95%",
+            scrub: true,
+            pin: container,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            // markers: true
+          }
+        });
+      }
+    </script>
+
+    
+    <!-- #endregion Painting -->
+    
+    <!-- #region Photography--> 
+    
+    <!-- #endregion Photography-->
+    
+    <!-- #region 3D -->
+    
+    <!-- #endregion 3D -->
+
     <!-- #region taunts --> 
 
     <!-- #endregion taunts -->
-    
-    <!-- <div class="spacer-10"></div> -->
-    <!-- <div class="spacer-10"></div> -->
-    <!-- <div class="spacer-50"></div> -->
-
-    <!-- #region Art -->
-
-    <!-- #endregion Art -->
-     
-
-    <!-- #region Photography--> 
-
-    <!-- #endregion Photography-->
-    
-    <!-- <div class="spacer-10"></div> -->
-    <!-- <div class="spacer-10"></div> -->
-    
-    <!-- #region 3D & Game Design -->
-
-    <!-- #endregion  -->
     
     <!-- #region fun -->
     <!-- <div style="position: relative; line-height: 0.5rem;">
@@ -241,38 +368,84 @@
     <div class="spacer-50"></div> -->
     <!-- #endregion -->
     
-    <div class="spacer-5"></div>
+    <div class="spacer-50"></div>
+    <!-- <div class="spacer-5"></div> -->
     
     <!-- #region footer -->
+    
     <div class="spacer-10"></div>
-    <div class="drd-banner-row" style="transform: rotate(-7deg);">
-      <div class="drd-banner-stack">
+    <div id="teaser">
+      <!-- <p>more stuff coming</p>
+      <p id="teasers">trust me</p> -->
+      <p>the site is evolving</p>
+      <p id="teasers">see you soon</p>
+    </div>
+    <style>
+      #teaser p {
+        /* border: 1px solid aqua; */
+        width: 90vw;
+        font-size: 8vw;
+        text-align: left;
+        letter-spacing: -0.12em;
+        font-weight: 800;
+        color: grey;
+        /* -webkit-text-stroke: 1px white; */
+        filter: blur(0.06em);
+      }
+      #teasers {
+        margin-top: -1.2em;
+      }
+      @media screen and (max-width: 768px) {
+        #teaser {
+          transform: rotate(-90deg) translateX(30%);
+          height: 90vw;
+          /* border: 1px solid aqua; */
+        }
+        #teaser p {
+          width: 90rem;
+          /* border: 1px solid aqua; */
+          font-size: 18vw;
+          margin-top: 0;
+        }
+        #teasers {
+          transform: translateY(-1.2em);
+        }
+      }
+    </style>
+
+    <!-- <div class="spacer-10"></div> -->
+    <div class="drd-banner-row" style="transform: rotate(-7deg); margin-top: -8vw;">
+      <div class="drd-banner-stack drd-banner-motion">
         <p class="top blu">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
         <p class="mid red">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
         <p class="bot wht">doradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodoradodorado</p>
       </div>
     </div>
     <script>
-      const banner = document.querySelector(".drd-banner-stack");
+      const banner = document.querySelector(".drd-banner-motion");
       const bannerWidth = banner.scrollWidth/2;
       gsap.to(banner, {x: -bannerWidth, ease: "none", duration: 60, repeat: -1,});
     </script>
     <div class="spacer-10"></div>
-
-    <!-- <div class="spacer-50"></div> -->
+    
     <div class="spacer-10"></div>
-    <div style="display: flex; justify-content: flex-end; width: 90vw;"> 
-      <p style="font-family: Inter; text-align: right;">
-        the site is being redesigned <br> see you soon
+    <div style="display: flex; justify-content: flex-end; width: 90vw;" class="intro-font"> 
+      <p style="text-align: right;">
+        <!-- the site is being redesigned <br>
+        see you soon -->
+        <!-- <div class="spacer-10"></div> -->
       </p>
     </div>
-    <div class="spacer-5"></div>
+    <!-- <div class="spacer-5"></div> -->
+
     <!-- #endregion footer -->
 
     <!-- <script src="/scripts/3D_anim.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <!-- <script src="/scripts/lenis_scroll.js"></script> -->
     <script src="/scripts/type-appear.js"></script>
+    <script src="/scripts/scroll-reveal.js"></script>
+    
   </body>
 
 

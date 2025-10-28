@@ -28,9 +28,9 @@
   .drd-banner-stack p{ font-size: 6rem;}
 }
 
-/* .blu {-webkit-text-stroke: 0.04em  blue;}
-.red {-webkit-text-stroke: 0.02em   red;}
-.wht {-webkit-text-stroke: 0.01em white;} */
+.blu-h {-webkit-text-stroke: 0.02em  blue; color: transparent;}
+.red-h {-webkit-text-stroke: 0.01em   red; color: transparent;}
+.wht-h {-webkit-text-stroke: 0.005em white; color: transparent;}
 
 .blu {color:  blue;}
 .red {color:   red;}

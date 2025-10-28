@@ -143,14 +143,25 @@ body {
 
 body p { 
   font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  line-height: 1em;
+}
+
+.intro-font p {
   font-size: 3rem;
   font-weight: 200;
   letter-spacing: -0.03em;
 }
 
-body h2{ 
-  font-size: 7rem;
-  font-weight: 200;
+.scroll-reveal {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.scroll-reveal span {
+  display: inline-block;
+  transform: translateY(-100%);
 }
 
 /* where?? */

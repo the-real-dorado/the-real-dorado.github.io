@@ -1,6 +1,6 @@
 // heavens know how this works //
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);  
 
 const baseDelay = 0.05; // Base delay between letters
 
@@ -47,18 +47,35 @@ document.querySelectorAll('.type-appear').forEach(el => {
     });
 
     // Use ScrollTrigger to trigger animation on scroll
-    ScrollTrigger.create({
-        trigger: el,
-        start: 'top 75%',
-        once: true,
-        onEnter: () => {
-            animLetters.forEach((span, i) => {
-                gsap.to(span, {
-                    opacity: 1,
-                    duration: 0, // No fade — instant jump
-                    delay: i * baseDelay
+    if (isMobile) {
+        ScrollTrigger.create({
+            trigger: el,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                animLetters.forEach((span, i) => {
+                    gsap.to(span, {
+                        opacity: 1,
+                        duration: 0, // No fade — instant jump
+                        delay: i * baseDelay
+                    });
                 });
-            });
-        }
-    });
+            }
+        });
+    } else {
+        ScrollTrigger.create({
+            trigger: el,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                animLetters.forEach((span, i) => {
+                    gsap.to(span, {
+                        opacity: 1,
+                        duration: 0, // No fade — instant jump
+                        delay: i * baseDelay
+                    });
+                });
+            }
+        });
+    }
 });
