@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="overflow-x: hidden;">
+
+
+    <head>
+    <title>dorado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/master.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        /* @media (min-width: 769px) {body {transform: scale(1.5); transform-origin: top center;} } */
+        body {overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+        .spacer-5 {padding-top:2.5vh!important;  padding-bottom:2.5vh!important;}
+        .spacer-10{padding-top:  5vh!important;  padding-bottom:  5vh!important;}
+        .spacer-50{padding-top:  25vh!important; padding-bottom: 25vh!important;}
+        @media (min-width: 769px) {.only-mobile {display: none !important;}}
+        @media (max-width: 768px) {.only-desktop {display: none !important;}}
+        body p {letter-spacing: 0em;}
+    </style>
+    <script>
+        // window.history.scrollRestoration = "manual";
+        // document.addEventListener("DOMContentLoaded", function () { window.scrollTo(0, 0); });
+        // window.onload = function () { window.scrollTo(0, 0); };
+        document.addEventListener("DOMContentLoaded", (event) => { gsap.registerPlugin(ScrollTrigger)});
+    </script>
+    </head>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        body h2 {
+            font-size: 3rem; 
+            font-family: Inter; 
+            letter-spacing: -0.1em; 
+            font-weight: 400;
+        }
+        body p {
+            font-size: 1.5rem;
+            font-family: Inter; 
+            letter-spacing: -0.1em; 
+            font-weight: 400;
+            margin: 0;
+        }
+        body p span {
+            font-size: 1rem;
+            letter-spacing: -0.1em;
+        }
+    </style>
+
+    <body>
+
+        <div style="border: 0.1rem solid white;">
+
+            <h1 style="font-size: 4rem; font-family: Against; letter-spacing: normal; font-weight: 400;
+            text-align: center;">
+                Dinner Party
+            </p>
+
+            <!-- <div class="spacer-5"></div> -->
+            <div class="spacer-5"></div>
+            <div style="margin: 0 auto; width: 85vw; height: 0.1rem; background-color: white;"></div>
+            
+            <div class="spacer-5"></div>
+        
+            <h2>Aperitivo</h2>
+            <p>Cantuccini e Vino <br> <span>(Biscotti alle mandorle con vino rosso o bianco)</span></p>
+        
+            <div class="spacer-5"></div>
+        
+            <h2>Primi</h2>
+            <p>Pollo al Burro <br> <span>(Pollo saltato in salsa di pomodoro e anacardi)</span></p>
+        
+            <div class="spacer-5"></div>
+        
+            <h2>Secondi</h2>
+            <p>Biryani Casalingo di Pollo <br> <span>(Riso piccante con pollo cotto in spezie aromatiche)</span></p>
+            
+            <div class="spacer-5"></div>
+            
+            <h2>Dolci</h2>
+            <p>S'mores <br> <span>(Un classico dolce americano)</span></p>
+            
+            <!-- <h2>Vino</h2>
+            <p>Rossa <br> Bianca</p> -->
+
+            <div class="spacer-10"></div>
+            <!-- <div class="spacer-5"></div> -->
+            
+            <p>coperto - un sorriso</p>
+            
+            <div class="spacer-10"></div>
+            
+        </div>
+
+    </body>
+
+
+</html>
