@@ -75,13 +75,6 @@
         window.addEventListener('keydown', preventScrollKeys, { passive: false });
       });
       setTimeout(() => {
-        // const rect = document.querySelector("#intro-3").getBoundingClientRect();
-        // const el = document.querySelector("#intro-3");
-        // el.style.position = "fixed";
-        // el.style.top = rect.top + "px";
-        // el.style.left = rect.left + "px";
-        // el.style.margin = 0;
-        // el.style.transform = "none";
         const elem = document.querySelector('.noscroll');
         if (elem) { elem.classList.remove('noscroll'); }
         const lenisScript = document.createElement('script');
@@ -186,7 +179,8 @@
     
     <!-- #region Painting -->
     <div class="painting">
-      <p id="painting-title" class="scroll-reveal">PAINTING</p>
+      <!-- <p id="painting-title" class="scroll-reveal">PAINTING</p> -->
+      <p id="painting-title" class="scroll-reveal">ARTWORKS</p>
       <div>
         <p id="painting-subtitle"></span>what it means to <span style="color: blue;">look</span> at something</p>
       </div>
@@ -202,9 +196,9 @@
       <div id="painting-fw-container">
         <div id="painting-fw-images">
           <p id="painting-fw-title-desktop" class="only-desktop">Feature Works <span style="display:inline-block; transform:rotate(90deg);">→</span></p>
-          <img src="images/paintings/girl_from_the_art_museum.jpg" alt="Girl from the Art Museum">
           <img src="images/paintings/girl_in_the_maroon_dress.jpg" alt="Girl in the Maroon Dress">
-          <img src="images/paintings/vices.jpg" alt="Vices">
+          <img src="images/paintings/girl_from_the_art_museum.jpg" alt="Girl from the Art Museum">
+          <img src="images/paintings/angel.jpg" alt="Angel">
         </div>
       </div>
     </div>
@@ -221,7 +215,8 @@
       #painting-title {
         border-top: 0.024em solid red;
         color: red;
-        font-size: 20vw;
+        /* font-size: 20vw; */
+        font-size: 16vw;
         margin: 0;
       }
       #painting-subtitle {
@@ -258,9 +253,9 @@
       #painting-fw-images img {
         height: 90rem;
         width: auto;
-        border-radius: 8px;
+        border-radius: 1rem;
         object-fit: cover;
-        border: 1px solid red;
+        border: 0.2rem solid red;
       }
 
       @media screen and (max-width: 768px) {
@@ -272,7 +267,8 @@
           text-align: left;
         }
         #painting-title{
-          font-size: 20rem;
+          /* font-size: 20rem; */
+          font-size: 16rem;
         }
         #painting-subtitle{
           font-size: 4rem;
@@ -305,27 +301,27 @@
         #painting-fw-images img {
           height: auto;
           width: 90vw;
-          border-radius: 8px;
+          border-radius: 1rem;
           object-fit: cover;
-          border: 1px solid red;
+          border: 0.2rem solid red;
         }
       }
     </style>
     <script>
-      const scroll = document.querySelector("#painting-fw-scroll");
-      const container = document.querySelector("#painting-fw-container");
-      const images = document.querySelector("#painting-fw-images");
+      const p_scroll = document.querySelector("#painting-fw-scroll");
+      const p_container = document.querySelector("#painting-fw-container");
+      const p_images = document.querySelector("#painting-fw-images");
       
       if (!isMobile){
-        gsap.to(images, {
-          x: () => -(images.scrollWidth - window.innerWidth*0.9) + "px",
+        gsap.to(p_images, {
+          x: () => -(p_images.scrollWidth - window.innerWidth*0.9) + "px",
           ease: "none",
           scrollTrigger: {
-            trigger: scroll,
+            trigger: p_scroll,
             start: "top 5%",
             end: "bottom 95%",
             scrub: true,
-            pin: container,
+            pin: p_container,
             anticipatePin: 1,
             invalidateOnRefresh: true,
             // markers: true

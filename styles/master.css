@@ -2,6 +2,20 @@
 :root {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
+  --font-mono: "Fira Code", monospace;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 1, "calt" 1;
+  /* enables Fira Code ligatures */
+  white-space: pre;
+  /* for <div class="mono"> blocks */
+}
+
+@font-face {
+  font-family: monospace;
+  src: local("Fira Code");
 }
 
 @supports (font-variation-settings: normal) {
@@ -10,6 +24,13 @@
   }
 }
 
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/styles/fonts/FiraCode-VF.ttf') format('truetype');
+  font-weight: 300 700;
+  /* since it's variable */
+  font-style: normal;
+}
 /* extra fonts */
 @font-face {
     font-family: 'Playfair Display';
@@ -121,7 +142,7 @@ sail
 */
 
 ::selection {
-  background-color: yellow;
+  background-color: gold;
   color: green;
 }
 
